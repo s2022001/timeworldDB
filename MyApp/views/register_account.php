@@ -11,7 +11,7 @@ require("../config.php");
 
 <?php include("../templates/header.php"); ?>
 
-<form method="POST" action="login.php">
+<form method="POST" action="<?php $thisfilename; ?>">
     <input type="text" name="input_username" required>
     <input type="password" name="input_password" required>
     <input type="submit" value="submit">
@@ -27,13 +27,12 @@ $pass = $_POST["input_password"];
 $user = checkuser($username,$pass);
 // $user=11;
 
-if (is_numeric($user)===true) {
-    session_start();
+if ($user==="No exists such user") {
 
-    $_SESSION["user_id"] = $user;
-    echo $_SESSION["user_id"];
+    $data = "('${username}', '${pass}')";
+    insertdata("users",$data);
 
-    header("Location: index.php");
+    header("Location: login.php");
     exit();
 
 } else {
