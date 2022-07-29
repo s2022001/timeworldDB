@@ -10,9 +10,9 @@ $dbconn = pg_connect("$connect") or die("Could not Connect:".pg_last_error());
 
 
 function insertdata($tablename,$data){
-    // $query="INSERT INTO dialy VALUES".$data.";";
-    if ($tablename === "dialy") {
-        $columns = "(spot_name, content, lat, lon, filename)";
+    // $query="INSERT INTO diary VALUES".$data.";";
+    if ($tablename === "diary") {
+        $columns = "(register_at, spot_name, content, lat, lon, filename, user_id)";
     } elseif ($tablename === "wishlists") {
         $columns = "()";
     } elseif ($tablename === "users") {
@@ -61,6 +61,18 @@ function checkuser($username,$password){
     } else {
         return "Query Faild : ".$query;
     }
+}
+
+function searchdata($tablename,$word) {
+    if ($tablename === "diary") {
+        $query = "SELECT * FROM ${tablename} WHERE content LIKE '%${word}%';";
+    } else {
+        return "table not found";
+    }
+
+    $result = pg_query("$query") or die("Query Failed:".pg_last_error());
+
+    return $result;
 }
 
 ?>

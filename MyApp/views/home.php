@@ -69,6 +69,25 @@ if (!isset($_SESSION["user_id"])) {
     <!-- スクロール -->
     <div class="col-md-6">
         <div class="memorys">
+<?php
+
+$diary_row = selectdata("diary");
+echo $diary_row;
+$num_px = 0;
+for ($i = 0; $i < pg_num_rows($diary_row); $i++){
+    $rows = pg_fetch_array($diary_row,NULL,PGSQL_ASSOC);
+    echo '<div class="memory" style="top: ${num_px}px;">';
+    echo '<div class="frame-select"></div>';
+    echo '<p class="memory-date">'.$rows["register_at"].'</p>';
+    echo '<p class="memory-loc">'.$rows["spot_name"].'</p>';
+    echo '<p class="memory-cap">'.$rows["content"].'</p>';
+    echo '</div>';
+
+    $num_px += 15;
+}
+echo "FIN!!!!!!!!";
+
+?>
             <div class="memory" style="top: 0px;">
                 <div class="frame-select"></div>
                 <p class="memory-date">Jun.10, 2022</p>
@@ -125,9 +144,10 @@ if (!isset($_SESSION["user_id"])) {
         <form action="<?php $thisfilename ;?>" method="POST">
             <div class="create">
                 <div class="create_btn"></div>
+                <a href="create_diary.php"><input type="button" class="create_btn"></a>
                 <p class="create_txt">作成</p>
                 
-                    <input type="submit" name="create">
+                <!-- <input type="submit" name="create"> -->
                 
             </div>
 
@@ -135,11 +155,12 @@ if (!isset($_SESSION["user_id"])) {
 
             <!-- 検索 -->
             <div class="v39_173">
-                <div class="v39_170"></div>
+                <!-- <div class="v39_170"></div> -->
+                <input type="submit" name="search">
+                <input type="text" class="v39_170" name="input_search">
                 <p class="v39_172">検索する</p>
-                <!-- <form action="<?php $thisfilename ;?>" method="POST"> -->
-                    <input type="submit" name="search">
-                <!-- </form> -->
+                
+                
             </div>
         </form>
     </div>
@@ -151,12 +172,26 @@ if (!isset($_SESSION["user_id"])) {
 if (isset($_POST["create"])) {
     // header("Location: create.php");
     // exit();
-    header("Location: create_diary.php");
-    exit();
+    // header("Location: create_diary.php");
+    // exit();
     echo "CREATE!!!!";
 } elseif (isset($_POST["search"])) {
     // search
     echo "PASS!!";
+    $search_result = searchdata("diary",$_POST["input_search"]);
+    $num_px = 300;
+    for ($i = 0; $i < pg_num_rows($search_result); $i++){
+        $rows = pg_fetch_array($search_result,NULL,PGSQL_ASSOC);
+        echo "RESULT!!!!!";
+        echo '<div class="memory" style="top: ${num_px}px;">';
+        echo '<div class="frame-select"></div>';
+        echo '<p class="memory-date">'.$rows["register_at"].'</p>';
+        echo '<p class="memory-loc">'.$rows["spot_name"].'</p>';
+        echo '<p class="memory-cap">'.$rows["content"].'</p>';
+        echo '</div>';
+
+        $num_px += 15;
+    }
 }
 
 

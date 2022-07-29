@@ -23,6 +23,7 @@ if (!isset($_SESSION["user_id"])) {
 
 <!-- here is content -->
 
+<form action="<?php $thisfilename;?>" method="POST" enctype="multipart/form-data">
 <div class="v12_400">
     <div class="v12_402">
         <div class="v12_403"></div>
@@ -42,29 +43,70 @@ if (!isset($_SESSION["user_id"])) {
         <div class="v13_430"></div>
         <span class="v13_431">日</span>
         <span class="v12_420">Date</span>
+        <input type="datetime-local" name="input_date" required>
     </div>
     <div class="v13_424">
         <div class="v13_425"></div>
         <span class="v13_426">Location</span>
+        <input type="text" name="input_location">
+        <span class="v13_426">SpotName</span>
+        <input type="text" name="input_spotname">
+
     </div>
     <span class="v13_435">ファイルを追加</span>
     <span class="v15_2">＋</span>
     <div class="v13_432">
-        <div class="v13_433"></div>
+        <div class="v13_433">
+            <input type="file" name="input_picture" required>
+        </div>
         <span class="v13_434">Picture</span>
     </div>
     <div class="v12_421">
         <div class="v12_422"></div>
         <span class="v12_423">Text</span>
+        <textarea name="input_content" ></textarea>
     </div>
     <div class="v15_3">
-        <div class="v15_5"></div>
+        <div class="v15_5"><input type="submit" name="submit"></div>
         <span class="v15_6">記録</span>
     </div>
 </div>
+</form>
 
 <?php
 
+if (isset($_POST["submit"])) {
+    $input_date = $_POST["input_date"];
+    $register_at = str_replace("T", " ", $input_date);
+    $spot_name = $_POST["input_spotname"];
+    $content = $_POST["input_content"];
+    $location = $_POST["input_location"];
+
+    // file upload
+    $fname = time() ."_". getmypid() . "." .pathinfo($_FILES["input_picture"]["name"], PATHINFO_EXTENSION);
+    $fpath = $config["upload_dir"] . $fname;
+
+    if ($_FILES["input_picture"]["size"] == 0){
+        echo "File Not Set";
+    } else {
+        $result = move_uploaded_file($_FILES["input_picture"]["tmp_name"], $fpath);
+
+        if($result===true){
+            echo "Complete Upload";
+        } else {
+            echo "Faild Upload".$_FILES["input_picture"]["error"];
+        }
+    }
+
+    $data = "('${register_at}', '${spot_name}', '${content}', ${location}, '${fname}', ${user_id})";
+    echo $data;
+
+    insertdata("diary",$data);
+
+    echo "end!";
+    header("Location: home.php");
+    exit();
+}
 
 ?>
 
