@@ -25,9 +25,10 @@ $username = $_POST["input_username"];
 $pass = $_POST["input_password"];
 
 $user = checkuser($username,$pass);
-// $user=11;
+
 
 if ($user==="No exists such user") {
+    
 
     $data = "('${username}', '${pass}')";
     insertdata("users",$data);

@@ -26,7 +26,7 @@ function insertdata($tablename,$data){
 
 function selectdata($tablename, $id=null){
     if ($id != null){
-        $query = "SELECT * FROM ".$tablename." WHERE id=".$id;
+        $query = "SELECT * FROM ".$tablename." WHERE user_id=".$id;
     } else {
         $query = "SELECT * FROM ".$tablename.";";
     }
@@ -42,11 +42,14 @@ function deletedata($tablename, $id){
 
 function checkuser($username,$password){
     // $query = "SELECT * FROM users WHERE username=".$username." AND password=".$password.";";
-    $query = "SELECT * FROM users WHERE username='${username}' AND password='${password}';";
+    $query = "SELECT * FROM users WHERE user_name='${username}' AND password='${password}';";
+    
     // $query = "SELECT * FROM users WHERE username="."'" . $username . "'"." AND password="."'" . $password . "';"; 
     $result = pg_query("$query") or die("Query Failed:".pg_last_error());
     
-    $len_row = count($result);
+    // $len_row = count($result);
+    $len_row = pg_num_rows($result);
+    
 
     if ($len_row === 0) {
         return "No exists such user";
@@ -63,13 +66,20 @@ function checkuser($username,$password){
     }
 }
 
-function searchdata($tablename,$word) {
+function searchdata($tablename,$word,$user_id) {
     if ($tablename === "diary") {
-        $query = "SELECT * FROM ${tablename} WHERE content LIKE '%${word}%';";
+        $query = "SELECT * FROM ${tablename} WHERE content LIKE '%${word}%' AND user_id=${user_id};";
     } else {
         return "table not found";
     }
 
+    $result = pg_query("$query") or die("Query Failed:".pg_last_error());
+
+    return $result;
+}
+
+function searchonedata($diary_id) {
+    $query = "SELECT * FROM diary WHERE diary_id=${diary_id};";
     $result = pg_query("$query") or die("Query Failed:".pg_last_error());
 
     return $result;

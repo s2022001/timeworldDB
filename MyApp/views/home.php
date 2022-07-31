@@ -71,17 +71,29 @@ if (!isset($_SESSION["user_id"])) {
         <div class="memorys">
 <?php
 
-$diary_row = selectdata("diary");
+$diary_row = selectdata("diary",$user_id);
 echo $diary_row;
 $num_px = 0;
 for ($i = 0; $i < pg_num_rows($diary_row); $i++){
     $rows = pg_fetch_array($diary_row,NULL,PGSQL_ASSOC);
+    $diary_id = $rows["diary_id"];
+
+    echo "<form action='detail_diary.php' method='POST' name='show_detail'>";
+    echo "<button type='submit'>";
     echo '<div class="memory" style="top: ${num_px}px;">';
     echo '<div class="frame-select"></div>';
     echo '<p class="memory-date">'.$rows["register_at"].'</p>';
     echo '<p class="memory-loc">'.$rows["spot_name"].'</p>';
     echo '<p class="memory-cap">'.$rows["content"].'</p>';
+
+    
+    echo "<input type='hidden' name='diary_id' value='${diary_id}'>";
+    // echo "<input type='submit' value='詳細'>";
     echo '</div>';
+    echo "</button>";
+
+    echo "</form>";
+
 
     $num_px += 15;
 }
@@ -178,7 +190,7 @@ if (isset($_POST["create"])) {
 } elseif (isset($_POST["search"])) {
     // search
     echo "PASS!!";
-    $search_result = searchdata("diary",$_POST["input_search"]);
+    $search_result = searchdata("diary",$_POST["input_search"],$user_id);
     $num_px = 300;
     for ($i = 0; $i < pg_num_rows($search_result); $i++){
         $rows = pg_fetch_array($search_result,NULL,PGSQL_ASSOC);
