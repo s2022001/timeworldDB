@@ -1,6 +1,5 @@
-<footer>
-    <h2>2022 all rights</h2>
-
+<footer class="container">
+    <p>&copy; </p>
 </footer>
 
 <!-- js  -->
