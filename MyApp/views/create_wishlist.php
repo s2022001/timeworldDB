@@ -23,34 +23,25 @@ if (!isset($_SESSION["user_id"])) {
 
 <!-- here is content -->
 
-<div class="v12_401">
-    <div class="v12_410">
-        <div class="v12_411"></div>
-        <div class="v12_412"></div>
-    </div>
-    <div class="v12_413">
-        <div class="v12_414"></div>
-        <span class="v12_415">Wish list</span>
-        <span class="v12_416">Memory</span>
-        <span class="v12_417">Diary</span>
-    </div>
-    <div class="v15_18">
-        <div class="v15_19"></div>
-        <span class="v15_20">Category</span>
-    </div>
-    <div class="v15_35">
-        <div class="v15_36"></div>
-        <span class="v15_37">URL</span>
-    </div>
-    <div class="v15_32">
-        <div class="v15_33"></div>
-        <span class="v15_34">Location</span>
-    </div>
-    <div class="v15_29">
-        <div class="v15_30"></div>
-        <span class="v15_31">追加</span>
-    </div>
-</div>
+<body class="col-md-10">
+      <div class="location col-md-6">
+        <div class="loc_frame"></div>
+        <span class="loc_txt">Location</span>
+      </div>
+      <div class="category col-md-6">
+        <div class="category_frame"></div>
+        <span class="category_txt">Category</span>
+      </div>
+      <div class="url col-md-6">
+        <div class="url_frame"></div>
+        <span class="url_txt">URL</span>
+      </div>
+      
+      <div class="add col-md-6">
+        <div class="add_btn"></div>
+        <span class="add_txt">追加</span>
+      </div>
+</body>
 
 <?php
 
