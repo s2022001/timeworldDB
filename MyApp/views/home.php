@@ -72,7 +72,6 @@ if (!isset($_SESSION["user_id"])) {
 <?php
 
 $diary_row = selectdata("diary",$user_id);
-echo $diary_row;
 $num_px = 0;
 for ($i = 0; $i < pg_num_rows($diary_row); $i++){
     $rows = pg_fetch_array($diary_row,NULL,PGSQL_ASSOC);
@@ -97,7 +96,7 @@ for ($i = 0; $i < pg_num_rows($diary_row); $i++){
 
     $num_px += 15;
 }
-echo "FIN!!!!!!!!";
+
 
 ?>
             <div class="memory" style="top: 0px;">
@@ -158,6 +157,7 @@ echo "FIN!!!!!!!!";
                 <div class="create_btn"></div>
                 <a href="create_diary.php"><input type="button" class="create_btn"></a>
                 <p class="create_txt">作成</p>
+                <p class="create_icon"><img src="../static/icon/create_icon.png"></p>
                 
                 <!-- <input type="submit" name="create"> -->
                 
@@ -189,18 +189,21 @@ if (isset($_POST["create"])) {
     echo "CREATE!!!!";
 } elseif (isset($_POST["search"])) {
     // search
-    echo "PASS!!";
     $search_result = searchdata("diary",$_POST["input_search"],$user_id);
+    echo $search_result;
     $num_px = 300;
     for ($i = 0; $i < pg_num_rows($search_result); $i++){
         $rows = pg_fetch_array($search_result,NULL,PGSQL_ASSOC);
-        echo "RESULT!!!!!";
-        echo '<div class="memory" style="top: ${num_px}px;">';
-        echo '<div class="frame-select"></div>';
-        echo '<p class="memory-date">'.$rows["register_at"].'</p>';
-        echo '<p class="memory-loc">'.$rows["spot_name"].'</p>';
-        echo '<p class="memory-cap">'.$rows["content"].'</p>';
-        echo '</div>';
+        echo $rows["content"];
+        echo $rows["spot_name"];
+        echo "<br>";
+        // echo "RESULT!!!!!";
+        // echo '<div class="memory" style="top: ${num_px}px;">';
+        // echo '<div class="frame-select"></div>';
+        // echo '<p class="memory-date">'.$rows["register_at"].'</p>';
+        // echo '<p class="memory-loc">'.$rows["spot_name"].'</p>';
+        // echo '<p class="memory-cap">'.$rows["content"].'</p>';
+        // echo '</div>';
 
         $num_px += 15;
     }

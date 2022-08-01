@@ -99,11 +99,9 @@ if (isset($_POST["submit"])) {
     }
 
     $data = "('${register_at}', '${spot_name}', '${content}', ${location}, '${fname}', ${user_id})";
-    echo $data;
 
     insertdata("diary",$data);
 
-    echo "end!";
     header("Location: home.php");
     exit();
 }
