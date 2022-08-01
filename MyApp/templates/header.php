@@ -19,7 +19,7 @@
     <header>
         <div class="nav-img">
             <nav class="navbar navbar-expand navbar-light fixed-top" >
-                <a class="navbar-brand nav-title" href="#">Diary</a>
+                <a class="navbar-brand nav-title" href="../views/home.php">Diary</a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -28,10 +28,10 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link nav-col" href="#memory">Memory</a>
+                            <a class="nav-link nav-col" href="../views/home.php">Memory</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-col" href="#wishlist">Wishlist</a>
+                            <a class="nav-link nav-col" href="../views/wishlists.php">Wishlist</a>
                         </li>
                         <li class="nav-item">
                             <form action="../templates/header.php" method="POST">
