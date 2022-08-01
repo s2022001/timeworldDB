@@ -24,6 +24,10 @@ if (!isset($_SESSION["user_id"])) {
 <!-- here is content -->
 <form action="<?php $thisfilename;?>" method="POST">
 <body class="col-md-10">
+    　<div class="spotname col-md-6">
+        <div class="spot_frame"></div>
+        <p class="column">Spot Name</p>
+      </div>
       <div class="location col-md-6">
         <div class="loc_frame">
             <input type="text" name="input_location" required>

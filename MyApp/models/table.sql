@@ -34,7 +34,7 @@ CREATE TABLE wishlists (
 	category       text,
 	url            text,
 	flag           boolean default False,
-	user_id        text
+	user_id        INTEGER
 );
 
 
@@ -56,6 +56,7 @@ LANGUAGE plpgsql;
 CREATE TRIGGER insert_trigger AFTER INSERT ON diary FOR EACH ROW
 EXECUTE FUNCTION insert_location();
 
+INSERT INTO users (user_name, password) VALUES ('TreasureHorce', 'as730819');
 
 INSERT INTO diary (register_at,spot_name,content,lat,lon,filename,user_id) VALUES ('2022-06-29 12:00:00','銀座','マックで新しいご飯バーガーを食べた',35.67177529368152, 139.7646087823085,'01.jpg',1);
 INSERT INTO diary (register_at,spot_name,content,lat,lon,filename,user_id) VALUES ('2022-06-20 12:00:00','サンシャイン水族館','水族館とクアアイナ行ってきた〜',35.729086254803846, 139.71950502340962,'02.jpg',1);

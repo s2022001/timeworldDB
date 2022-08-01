@@ -23,71 +23,72 @@ if (!isset($_SESSION["user_id"])) {
 
 <!-- here is content -->
 
-<div class="v8_291">
-    <div class="v8_303">
-        <div class="v8_304"></div>
-        <div class="v8_371"></div>
-    </div>
-    <div class="v8_306">
-        <div class="v8_307"></div>
-        <div class="name"></div>
-        <div class="name"></div>
-        <span class="v8_311">清里バーガー</span>
-        <span class="v8_312">foof</span>
-        <span class="v8_351">https://www.makiba-res.com/</span>
-        <div class="v8_360"></div>
-        <div class="v8_359"></div>
-    </div>
-    <div class="v8_316">
-        <div class="v8_317"></div>
-        <div class="name"></div>
-        <div class="name"></div>
-        <span class="v8_321">赤福の店舗</span>
-        <span class="v8_322">food</span>
-        <span class="v8_355">https://www.akafuku.co.jp/</span>
-        <div class="v8_362"></div>
-        <div class="v8_366"></div>
-    </div>
-    <div class="v8_326">
-        <div class="v8_361"></div>
-        <div class="v8_327"></div>
-        <div class="name"></div>
-        <div class="name"></div>
-        <span class="v8_331">モスプレミアム</span>
-        <span class="v8_332">food</span>
-        <span class="v8_356">https://www.mospremium.jp/index.html</span>
-        <div class="v8_365"></div>
-    </div>
-    <div class="v8_336">
-        <div class="v8_364"></div>
-        <div class="v8_358"></div>
-        <div class="v8_337"></div>
-        <div class="name"></div>
-        <div class="name"></div>
-        <span class="v8_341">グラニースミス</span>
-        <span class="v8_342">food</span>
-        <span class="v8_357">https://www.grannysmith-pie.com/</span>
-    </div>
-    <div class="v8_293">
-        <div class="v8_294"></div>
-        <div class="v8_295"></div>
-    </div>
-    <div class="v12_384">
-        <div class="v8_292"></div>
-        <span class="v8_377">Memory</span>
-        <span class="v15_41">Wish list</span>
-        <span class="v8_300">Diary</span>
-    </div>
-    <div class="v12_394">
-        <div class="v12_396"></div>
-        <span class="v12_397">追加</span>
-        <div class="v12_399"></div>
-    </div>
-</div>
+<main>
+      <div class="v8_291 col-md-12">
+        <!-- map -->
+        <div class="map col-md-6">
+          <div class="map_frame"></div>
+        </div>
+        <div class="wishlists col-md-6">
+<?php
+$wishlist_row = selectdata("wishlists",$user_id);
+$num_px = 0;
+for ($i = 0; $i < pg_num_rows($wishlist_row); $i++){
+    $rows = pg_fetch_array($wishlist_row,NULL,PGSQL_ASSOC);
+    $wishlist_id = $rows["diary_id"];
+
+    echo '<div class="wish" style="top: ${num_px}px;">';
+    echo '<div class="frame-select"></div>';
+    echo '<p class="wish_loc">'.$rows["spot_name"].'</p>';
+    echo '<p class="wish_category">'.$rows["category"].'</p>';
+    echo '<p class="wish_url">'.$rows["url"].'</p>';
+    echo '</div>';
+
+    $num_px += 15;
+}
+?>
+          <div class="wish" style="top: 0px;">
+            <div class="frame_select"></div>
+            <span class="wish_loc">清里バーガー</span>
+            <span class="wish_category">foof</span>
+            <span class="wish_url">https://www.makiba-res.com/</span>
+          </div>
+          <div class="wish" style="top: 15px;">
+            <div class="frame_normal"></div>
+            <span class="wish_loc">赤福の店舗</span>
+            <span class="wish_category">food</span>
+            <span class="wish_url">https://www.akafuku.co.jp/</span>
+          </div>
+          <div class="wish" style="top: 30px;">
+            <div class="frame_normal"></div>
+            <span class="wish_loc">モスプレミアム</span>
+            <span class="wish_category">food</span>
+            <span class="wish_url">https://www.mospremium.jp/index.html</span>
+          </div>
+          <div class="wish" style="top: 45px;">
+            <div class="frame_normal"></div>
+            <span class="wish_loc">グラニースミス</span>
+            <span class="wish_category">food</span>
+            <span class="wish_url">https://www.grannysmith-pie.com/</span>
+          </div>
+        </div>
+        <!-- 作成 -->
+        <div class="add">
+          <div class="add_btn"></div>
+          <p class="add_txt">追加</p>
+          <p class="create_icon"><img src="../static/icon/create_icon.png"></p>
+        </div>
+        <!-- 検索 -->
+        <div class="search">
+          <div class="search_frame"></div>
+          <p class="search_txt">検索する</p>
+        </div>
+      </div>
+</main>
 
 <?php
 
-
+echo $user_id;
 ?>
 
 <?php include("../templates/footer.php"); ?>
