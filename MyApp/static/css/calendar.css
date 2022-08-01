@@ -21,6 +21,13 @@ body {
 }
 
 /* カレンダー */
+.v2_21 {
+    width: auto;
+    height: 100%;
+    position: absolute;
+    top: 50px;
+}
+
 .wrapper {
     margin: 15px auto;
     max-width: 100%;
