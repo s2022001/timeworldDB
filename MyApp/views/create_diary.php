@@ -56,9 +56,9 @@ if (!isset($_SESSION["user_id"])) {
     <span class="v13_435">ファイルを追加</span>
     <span class="v15_2">＋</span>
     <div class="v13_432">
-        <div class="v13_433">
-            <input type="file" name="input_picture" required>
-        </div>
+        
+        <input type="file" class="v13_433" name="input_picture" required>
+        
         <span class="v13_434">Picture</span>
     </div>
     <div class="v12_421">
@@ -67,7 +67,7 @@ if (!isset($_SESSION["user_id"])) {
         <textarea name="input_content" ></textarea>
     </div>
     <div class="v15_3">
-        <div class="v15_5"><input type="submit" name="submit"></div>
+        <input type="submit" class="v15_5" name="submit">
         <span class="v15_6">記録</span>
     </div>
 </div>

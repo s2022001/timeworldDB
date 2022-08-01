@@ -16,23 +16,23 @@ require("../config.php");
         <a class="v2_4">Diary</a>
         <!-- username -->
         <div class="v2_20">
-            <div class="v2_6">
-                <input type="text" class="v2_6" name="input_username" required>        
-            </div>
+            
+            <input type="text" class="v2_6" name="input_username" required>        
+            
             <a class="v2_7">User Name</a>
         </div>
         <!-- password -->
         <div class="v2_19">
-            <div class="v2_8">
-                <input type="password" name="input_password" required>
-            </div>
+            
+            <input type="password" class="v2_8" name="input_password" required>
+            
             <a class="v2_9">Password</a>
         </div>
         <!-- signin -->
         <div class="v2_14">
-            <div class="v2_10">
-                <input type="submit" name="login" value="submit">
-            </div>
+            
+            <input type="submit" class="v2_10" name="login" value="submit">
+            
             <a class="v2_13">Log In</a>
         </div>
         <!-- signup -->

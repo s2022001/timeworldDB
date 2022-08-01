@@ -74,21 +74,41 @@ for ($i = 0; $i < pg_num_rows($wishlist_row); $i++){
         </div>
         <!-- 作成 -->
         <div class="add">
-          <div class="add_btn"></div>
+          
+          <a href="create_wishlist.php"><input class="add_btn" type="button"></a>
+          
           <p class="add_txt">追加</p>
           <p class="create_icon"><img src="../static/icon/create_icon.png"></p>
         </div>
         <!-- 検索 -->
+        <form action="<?php $thisfilename;?>" method="POST">
         <div class="search">
-          <div class="search_frame"></div>
+          
+          <input type="text" class="search_frame" name="input_search">
+          
           <p class="search_txt">検索する</p>
+          <input type="submit" name="search">
         </div>
+        </form>
       </div>
 </main>
 
 <?php
 
-echo $user_id;
+if (isset($_POST["search"])) {
+    $search_result = searchdata("wishlists",$_POST["input_search"],$user_id);
+    echo $search_result;
+    $num_px = 300;
+    for ($i = 0; $i < pg_num_rows($search_result); $i++){
+        $rows = pg_fetch_array($search_result,NULL,PGSQL_ASSOC);
+        echo $rows["spot_name"];
+        echo $rows["category"];
+        echo $rows["url"];
+        echo "<br>";
+
+        $num_px += 15;
+    }
+}
 ?>
 
 <?php include("../templates/footer.php"); ?>

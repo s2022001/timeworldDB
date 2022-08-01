@@ -25,32 +25,36 @@ if (!isset($_SESSION["user_id"])) {
 <form action="<?php $thisfilename;?>" method="POST">
 <body class="col-md-10">
     　<div class="spotname col-md-6">
-        <div class="spot_frame"></div>
+        <!-- <div class="spot_frame"></div> -->
+        <input type="text" class="spot_frame" name="input_spotname" required>
         <p class="column">Spot Name</p>
       </div>
       <div class="location col-md-6">
-        <div class="loc_frame">
-            <input type="text" name="input_location" required>
-        </div>
+        
+        <input type="text" class="loc_frame" name="input_location" required>
+        
         <span class="loc_txt">Location</span>
       </div>
       <div class="category col-md-6">
-        <div class="category_frame">
-            <input type="text" name="input_category" required>
-        </div>
+        
+        <select class="category_frame" name="input_category">
+            <option value="food">Food</option>
+            <option value="amusement">Amusement</option>
+            <option value="sightseeing">Sightseeing</option>
+            <option value="refreshed">Refreshed</option>
+            <option value="shopping">Shopping</option>
+        </select>
         <span class="category_txt">Category</span>
       </div>
       <div class="url col-md-6">
-        <div class="url_frame">
-            <input type="text" name="input_url" required>
-        </div>
+        
+        <input type="text" class="url_frame" name="input_url" required>
+        
         <span class="url_txt">URL</span>
       </div>
       
       <div class="add col-md-6">
-        <div class="add_btn">
-            <input type="submit" name="submit">
-        </div>
+        <input type="submit" class="add_btn" name="submit">
         <span class="add_txt">追加</span>
       </div>
 </body>
@@ -58,7 +62,7 @@ if (!isset($_SESSION["user_id"])) {
 <?php
 
 if (isset($_POST["submit"])) {
-    $spot_name = "TEST";
+    $spot_name = $_POST["input_spotname"];
     $location = $_POST["input_location"];
     $category = $_POST["input_category"];
     $url = $_POST["input_url"];

@@ -1,0 +1,13 @@
+/* navbar */
+nav {
+    background-color: #EAEAEA;
+    opacity: 0.8;
+}
+.nav-title {
+    font-size: 36px;
+    color: #636363;
+}
+.nav-col {
+    font-size: 20px;
+    color: #636363;
+}

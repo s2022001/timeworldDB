@@ -154,7 +154,7 @@ for ($i = 0; $i < pg_num_rows($diary_row); $i++){
         <!-- 作成 -->
         <form action="<?php $thisfilename ;?>" method="POST">
             <div class="create">
-                <div class="create_btn"></div>
+                
                 <a href="create_diary.php"><input type="button" class="create_btn"></a>
                 <p class="create_txt">作成</p>
                 <p class="create_icon"><img src="../static/icon/create_icon.png"></p>

@@ -12,6 +12,7 @@
     <link href="../static/css/create.css" rel="stylesheet">
     <link href="../static/css/header.css" rel="stylesheet">
     <link href="../static/css/wishlists.css" rel="stylesheet">
+    <link href="../static/css/register.css" rel="stylesheet">
     <title>Document</title>
 </head>
 

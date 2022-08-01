@@ -21,8 +21,7 @@ function insertdata($tablename,$data){
         return "tablename Error";
     }
     $query = "INSERT INTO ${tablename} ${columns} VALUES ${data};";
-    // debug
-    echo $query;
+
     $result = pg_query("$query") or die("Query Failed:".pg_last_error());
 }
 
@@ -71,6 +70,8 @@ function checkuser($username,$password){
 function searchdata($tablename,$word,$user_id) {
     if ($tablename === "diary") {
         $query = "SELECT * FROM ${tablename} WHERE content LIKE '%${word}%' AND user_id=${user_id};";
+    } elseif ($tablename === "wishlists") {
+        $query = "SELECT * FROM ${tablename} WHERE spot_name LIKE '%${word}%' AND user_id=${user_id};";
     } else {
         return "table not found";
     }
