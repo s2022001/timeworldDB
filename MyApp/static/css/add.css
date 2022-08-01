@@ -56,11 +56,10 @@ body {
     overflow: hidden;
 }
 .loc_txt {
-    font-size: 16px;
     width: 45px;
     position: absolute;
     top: 71px;
-    left: 20px;
+    left: 137px;
     text-align: center;
 }
 .category {
