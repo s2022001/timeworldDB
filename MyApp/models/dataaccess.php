@@ -14,13 +14,15 @@ function insertdata($tablename,$data){
     if ($tablename === "diary") {
         $columns = "(register_at, spot_name, content, lat, lon, filename, user_id)";
     } elseif ($tablename === "wishlists") {
-        $columns = "()";
+        $columns = "(spot_name, lat, lon, category, url, user_id)";
     } elseif ($tablename === "users") {
         $columns = "(user_name, password)";
     } else {
         return "tablename Error";
     }
     $query = "INSERT INTO ${tablename} ${columns} VALUES ${data};";
+    // debug
+    echo $query;
     $result = pg_query("$query") or die("Query Failed:".pg_last_error());
 }
 
