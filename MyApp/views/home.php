@@ -76,7 +76,7 @@ for ($i = 0; $i < pg_num_rows($diary_row); $i++){
     $diary_id = $rows["diary_id"];
 
     echo "<form action='detail_diary.php' method='POST' name='show_detail'>";
-    echo "<button type='submit'>";
+    echo "<button type='submit' class='frame-select'>";
     echo '<div class="memory" style="top: ${num_px}px;">';
     echo '<div class="frame-select"></div>';
     echo '<p class="memory-date">'.$rows["register_at"].'</p>';
