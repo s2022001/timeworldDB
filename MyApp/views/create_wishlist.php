@@ -29,7 +29,7 @@ if (!isset($_SESSION["user_id"])) {
       <input type="text" class="frame" name="input_spotname" required>
       <p class="column">Spot Name</p>
     </div>
-    <div class="location col-md-6">
+    <div class="location col-md-6" style="top: 130px;">
       
       <input type="text" class="frame" name="input_location" required>
       
