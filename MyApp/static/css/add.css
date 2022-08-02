@@ -55,7 +55,7 @@ body {
     margin: auto;
     overflow: hidden;
 }
-.add {
+.wadd {
     width: 150px;
     height: 100px;
     position: relative;
@@ -64,7 +64,7 @@ body {
     margin: auto;
     overflow: hidden;
 }
-.add_btn {
+.wadd_btn {
     width: 130px;
     height: 50px;
     position: relative;
@@ -79,7 +79,7 @@ body {
     opacity: 0.5;
     overflow: hidden;
 }
-.add_txt {
+.wadd_txt {
     width: 130px;
     color: rgba(99,99,99,1);
     position: relative;

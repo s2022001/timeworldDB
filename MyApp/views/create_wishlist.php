@@ -53,9 +53,9 @@ if (!isset($_SESSION["user_id"])) {
       <p class="column">URL</p>
     </div>
     
-    <div class="add col-md-6">
-      <input type="submit" class="add_btn" name="submit">
-      <p class="add_txt">追加</p>
+    <div class="wadd col-md-6">
+      <input type="submit" class="wadd_btn" name="submit">
+      <p class="wadd_txt">追加</p>
     </div>
   </body>
 </form>
