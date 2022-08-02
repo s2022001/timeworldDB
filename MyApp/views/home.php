@@ -126,7 +126,7 @@ for ($i = 0; $i < pg_num_rows($diary_row); $i++){
 
 
 ?>
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                     <div class="card flex-md-row mb-4 shadow-sm h-md-250">
                         <div class="card-body d-flex flex-column align-items-start">
                             <h3 class="mb-0">
@@ -184,7 +184,7 @@ for ($i = 0; $i < pg_num_rows($diary_row); $i++){
                     <p class="memory-date">May.30, 2022</p>
                     <p class="memory-loc">南大沢</p>
                     <p class="memory-cap">やることやって南大沢へ！</p>
-                </div>
+                </div> -->
             </div>
 
 
