@@ -23,9 +23,8 @@ if (!isset($_SESSION["user_id"])) {
 <?php echo $user_id; ?>
 
         <!-- here is content -->
-        <div class="v2_21 col-md-10">
+        <div class="v2_21 col-md-12">
             <!-- カレンダー -->
-            <!-- <div class="v2_85 mr-md-3 pt-3 px-3 pt-md-5 px-md-5 overflow-hidden"> -->
             <div class="v2_85 col-md-6">
                 <!-- <div class="v2_83"></div>
                 <div class="v2_84"></div> -->
@@ -67,8 +66,7 @@ if (!isset($_SESSION["user_id"])) {
             </div>
 
             <!-- スクロール -->
-            <div class="col-md-6">
-                <div class="memorys">
+            <div class="memorys col-md-6">
 <?php
 
 $diary_row = selectdata("diary",$user_id);
@@ -99,55 +97,55 @@ for ($i = 0; $i < pg_num_rows($diary_row); $i++){
 
 
 ?>
-            <div class="memory" style="top: 0px;">
-                <div class="frame-select"></div>
-                <p class="memory-date">Jun.10, 2022</p>
-                <p class="memory-loc">新大久保</p>
-                <p class="memory-cap">辛いものいっぱいかと思ったけどそうではなさそう…？</p>
+                <div class="memory" style="top: 0px;">
+                    <div class="frame-select"></div>
+                    <p class="memory-date">Jun.10, 2022</p>
+                    <p class="memory-loc">新大久保</p>
+                    <p class="memory-cap">辛いものいっぱいかと思ったけどそうではなさそう…？</p>
+                </div>
+                <div class="memory" style="top: 15px;">
+                    <div class="frame-normal"></div>
+                    <p class="memory-date">Jun.04, 2022</p>
+                    <p class="memory-loc">越谷レイクタウン</p>
+                    <p class="memory-cap">VSパークに遊びに行った〜</p>
+                </div>
+                <div class="memory" style="top: 30px;">
+                    <div class="frame-normal"></div>
+                    <p class="memory-date">Jun.04, 2022</p>
+                    <p class="memory-loc">越谷レイクタウン</p>
+                    <p class="memory-cap">卵と私に初潜入！美味しかった〜！</p>
+                </div>
+                <div class="memory" style="top: 45px;">
+                    <div class="frame-normal"></div>
+                    <p class="memory-date">May.30, 2022</p>
+                    <p class="memory-loc">南大沢</p>
+                    <p class="memory-cap">やることやって南大沢へ！</p>
+                </div>
+                <div class="memory" style="top: 60px;">
+                    <div class="frame-normal"></div>
+                    <p class="memory-date">Jun.10, 2022</p>
+                    <p class="memory-loc">新大久保</p>
+                    <p class="memory-cap">辛いものいっぱいかと思ったけどそうではなさそう…？</p>
+                </div>
+                <div class="memory" style="top: 75px;">
+                    <div class="frame-normal"></div>
+                    <p class="memory-date">Jun.04, 2022</p>
+                    <p class="memory-loc">越谷レイクタウン</p>
+                    <p class="memory-cap">VSパークに遊びに行った〜</p>
+                </div>
+                <div class="memory" style="top: 90px;">
+                    <div class="frame-normal"></div>
+                    <p class="memory-date">Jun.04, 2022</p>
+                    <p class="memory-loc">越谷レイクタウン</p>
+                    <p class="memory-cap">卵と私に初潜入！美味しかった〜！</p>
+                </div>
+                <div class="memory" style="top: 105px;">
+                    <div class="frame-normal"></div>
+                    <p class="memory-date">May.30, 2022</p>
+                    <p class="memory-loc">南大沢</p>
+                    <p class="memory-cap">やることやって南大沢へ！</p>
+                </div>
             </div>
-            <div class="memory" style="top: 15px;">
-                <div class="frame-normal"></div>
-                <p class="memory-date">Jun.04, 2022</p>
-                <p class="memory-loc">越谷レイクタウン</p>
-                <p class="memory-cap">VSパークに遊びに行った〜</p>
-            </div>
-            <div class="memory" style="top: 30px;">
-                <div class="frame-normal"></div>
-                <p class="memory-date">Jun.04, 2022</p>
-                <p class="memory-loc">越谷レイクタウン</p>
-                <p class="memory-cap">卵と私に初潜入！美味しかった〜！</p>
-            </div>
-            <div class="memory" style="top: 45px;">
-                <div class="frame-normal"></div>
-                <p class="memory-date">May.30, 2022</p>
-                <p class="memory-loc">南大沢</p>
-                <p class="memory-cap">やることやって南大沢へ！</p>
-            </div>
-            <div class="memory" style="top: 60px;">
-                <div class="frame-normal"></div>
-                <p class="memory-date">Jun.10, 2022</p>
-                <p class="memory-loc">新大久保</p>
-                <p class="memory-cap">辛いものいっぱいかと思ったけどそうではなさそう…？</p>
-            </div>
-            <div class="memory" style="top: 75px;">
-                <div class="frame-normal"></div>
-                <p class="memory-date">Jun.04, 2022</p>
-                <p class="memory-loc">越谷レイクタウン</p>
-                <p class="memory-cap">VSパークに遊びに行った〜</p>
-            </div>
-            <div class="memory" style="top: 90px;">
-                <div class="frame-normal"></div>
-                <p class="memory-date">Jun.04, 2022</p>
-                <p class="memory-loc">越谷レイクタウン</p>
-                <p class="memory-cap">卵と私に初潜入！美味しかった〜！</p>
-            </div>
-            <div class="memory" style="top: 105px;">
-                <div class="frame-normal"></div>
-                <p class="memory-date">May.30, 2022</p>
-                <p class="memory-loc">南大沢</p>
-                <p class="memory-cap">やることやって南大沢へ！</p>
-            </div>
-        </div>
 
 
 
