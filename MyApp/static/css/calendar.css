@@ -148,10 +148,10 @@ body {
 
 /* スクロール */
 .memorys {
-    width: 600px;
+    width: 100%;
     height: 440px;
     position: relative;
-    top: 150px;
+    top: 0px;
     /* left: 800px; */
     overflow-y: scroll;
 }
