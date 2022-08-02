@@ -106,8 +106,7 @@ for ($i = 0; $i < pg_num_rows($diary_row); $i++){
     $diary_id = $rows["diary_id"];
 
     echo "<form action='detail_diary.php' method='POST' name='show_detail'>";
-    echo '<div class="frame-normal flex-md-row mb-4 shadow-sm h-md-250">';
-    echo "<button type='submit'>";
+    echo "<button type='submit' class='frame-normal flex-md-row mb-4 shadow-sm h-md-250'>";
     echo '<div class="card-body d-flex flex-column align-items-start">';
     echo '<h3 class="md-0"><p class="text-dark">'.$rows["register_at"].'</p></h3>';
     echo '<p class="mb-1 text-muted">'.$rows["spot_name"].'</p>';
@@ -119,7 +118,7 @@ for ($i = 0; $i < pg_num_rows($diary_row); $i++){
     echo '</div></div>';
     echo "</button>";
 
-    echo "</form><br>";
+    echo "</form>";
 
 
     $num_px += 15;
@@ -191,29 +190,29 @@ for ($i = 0; $i < pg_num_rows($diary_row); $i++){
 
 
             <!-- 作成 -->
-            <form action="<?php $thisfilename ;?>" method="POST">
+            <!-- <form action="<?php $thisfilename ;?>" method="POST">
                 <div class="create">
                     
                     <a href="create_diary.php"><input type="button" class="create_btn"></a>
                     <p class="create_txt">作成</p>
-                    <p class="create_icon"><img src="../static/icon/create_icon.png"></p>
+                    <p class="create_icon"><img src="../static/icon/create_icon.png"></p> -->
                     
                     <!-- <input type="submit" name="create"> -->
                     
-                </div>
+                <!-- </div> -->
 
                 
 
                 <!-- 検索 -->
-                <div class="v39_173">
+                <!-- <div class="v39_173"> -->
                     <!-- <div class="v39_170"></div> -->
-                    <input type="submit" name="search">
+                    <!-- <input type="submit" name="search">
                     <input type="text" class="v39_170" name="input_search">
                     <p class="v39_172">検索する</p>
                     
                     
                 </div>
-            </form>
+            </form> -->
         </div>
 
 <?php
