@@ -54,8 +54,8 @@ if (!isset($_SESSION["user_id"])) {
     </div>
     
     <div class="wadd col-md-6">
-      <input type="submit" class="wadd_btn" name="submit">
-      <p class="wadd_txt">追加</p>
+      <input type="submit" class="wadd_btn" name="submit" value="追加">
+      <!-- <p class="wadd_txt">追加</p> -->
     </div>
   </body>
 </form>
