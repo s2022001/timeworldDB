@@ -66,7 +66,7 @@ if (!isset($_SESSION["user_id"])) {
             </div>
 
             <!-- スクロール -->
-            <div class="memorys" style="top: 150px; position: absolute;">
+            <div class="memorys" style="top: 0px; position: absolute;">
 <?php
 
 // $diary_row = selectdata("diary",$user_id);
