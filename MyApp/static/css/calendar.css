@@ -152,8 +152,9 @@ body {
     width: 600px;
     height: 440px;
     position: relative;
-    top: -100px;
+    /* top: -100px; */
     /* left: 800px; */
+    margin: auto;
     overflow-y: scroll;
 }
 .frame-select {
@@ -182,7 +183,7 @@ body {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-.memory-date {
+/* .memory-date {
     width: 200px;
     position: absolute;
     top: 0px;
@@ -205,13 +206,13 @@ body {
     left: 20px;
     font-size: 16px;
     text-align: left;
-}
-.memory {
+} */
+/* .memory {
     width: 600px;
     height: 134px;
     position: relative;
     left: 0px;
-}
+} */
 
 /* 作成 */
 /* .create {
