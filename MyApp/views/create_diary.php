@@ -24,53 +24,38 @@ if (!isset($_SESSION["user_id"])) {
 <!-- here is content -->
 
 <form action="<?php $thisfilename;?>" method="POST" enctype="multipart/form-data">
-<div class="v12_400">
-    <div class="v12_402">
-        <div class="v12_403"></div>
-        <div class="v12_404"></div>
+<main>
+    <div class="date">
+        <p class="column">Date</p>
+        <div class="date_frame" style="left: 0px;"></div>
+        <p class="date_txt" style="left: 137px;">年</p>
+        <div class="date_frame" style="left: 180px;"></div>
+        <p class="date_txt" style="left: 317px;">月</p>
+        <div class="date_frame" style="left: 360px;"></div>
+        <p class="date_txt" style="left: 497px;">日</p>
+        <input type="datetime-local" name="input_date">
     </div>
-    <div class="v12_405">
-        <div class="v12_406"></div>
-        <span class="v12_407">Wish list</span>
-        <span class="v12_408">Memory</span>
-        <span class="v12_409">Diary</span>
-    </div>
-    <div class="v12_418">
-        <div class="v12_419"></div>
-        <span class="v13_427">年</span>
-        <div class="v13_428"></div>
-        <span class="v13_429">月</span>
-        <div class="v13_430"></div>
-        <span class="v13_431">日</span>
-        <span class="v12_420">Date</span>
-        <input type="datetime-local" name="input_date" required>
-    </div>
-    <div class="v13_424">
-        <div class="v13_425"></div>
-        <span class="v13_426">Location</span>
-        <input type="text" name="input_location">
-        <span class="v13_426">SpotName</span>
-        <input type="text" name="input_spotname">
 
+    <div class="location">
+        <p class="column">Location</p>
+        <input type="text" class="location_frame" name="input_location">
     </div>
-    <span class="v13_435">ファイルを追加</span>
-    <span class="v15_2">＋</span>
-    <div class="v13_432">
-        
-        <input type="file" class="v13_433" name="input_picture" required>
-        
-        <span class="v13_434">Picture</span>
+
+    <div class="text">
+        <p class="column">Text</p>
+        <textarea name="input_content" class="text_frame"></textarea> 
     </div>
-    <div class="v12_421">
-        <div class="v12_422"></div>
-        <span class="v12_423">Text</span>
-        <textarea name="input_content" ></textarea>
+
+    <div class="picture">
+        <p class="column">Picture</p>
+        <input type="file" class="picture_frame" name="input_picture">
     </div>
-    <div class="v15_3">
-        <input type="submit" class="v15_5" name="submit">
-        <span class="v15_6">記録</span>
+
+    <div class="create">
+        <p class="create_txt">記録</p>
+        <input type="submit" class="create_btn" name="submit">
     </div>
-</div>
+</main>
 </form>
 
 <?php
