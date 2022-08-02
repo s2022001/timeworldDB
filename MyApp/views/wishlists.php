@@ -44,6 +44,7 @@ if (isset($_POST["search"])) {
         echo '<p class="wish_category">'.$rows["category"].'</p>';
         echo '<p class="wish_url">'.$rows["url"].'</p>';
         echo '</div>';
+        echo '<br>';
 
         $num_px += 15;
     }
@@ -60,6 +61,7 @@ if (isset($_POST["search"])) {
         echo '<p class="wish_category">'.$rows["category"].'</p>';
         echo '<p class="wish_url">'.$rows["url"].'</p>';
         echo '</div>';
+        echo '<br>';
 
         $num_px += 15;
     }
