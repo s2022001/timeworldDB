@@ -42,7 +42,8 @@ if (isset($_POST["search"])) {
         echo '<div class="frame-select"></div>';
         echo '<p class="wish_loc">'.$rows["spot_name"].'</p>';
         echo '<p class="wish_category">'.$rows["category"].'</p>';
-        echo '<p class="wish_url">'.$rows["url"].'</p>';
+        $url = $rows["url"];
+        echo '<a href="${url}"><p class="wish_url">'.$rows["url"].'</p></a>';
         echo '</div>';
         echo '<br>';
 
