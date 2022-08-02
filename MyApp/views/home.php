@@ -25,7 +25,7 @@ if (!isset($_SESSION["user_id"])) {
         <!-- here is content -->
         <div class="v2_21 col-md-12">
             <!-- カレンダー -->
-            <div class="v2_85 col-md-6">
+            <div class="col-md-6">
                 <!-- <div class="v2_83"></div>
                 <div class="v2_84"></div> -->
                 <div class="top_line"></div>
@@ -66,7 +66,7 @@ if (!isset($_SESSION["user_id"])) {
             </div>
 
             <!-- スクロール -->
-            <div class="memorys">
+            <div class="memorys col-md-6">
 <?php
 
 // $diary_row = selectdata("diary",$user_id);
