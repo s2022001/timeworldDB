@@ -151,7 +151,7 @@ body {
 .memorys {
     width: 600px;
     height: 440px;
-    position: relative;
+    position: absolute;
     top: 0px;
     /* left: 800px; */
     margin: auto;
