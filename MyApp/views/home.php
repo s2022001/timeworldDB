@@ -97,6 +97,17 @@ for ($i = 0; $i < pg_num_rows($diary_row); $i++){
 
 
 ?>
+                <div class="col-md-6">
+                    <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                        <div class="card-body d-flex flex-column align-items-start">
+                            <h3 class="mb-0">
+                                <p class="text-dark">2022/08/02</p>
+                            </h3>
+                            <div class="mb-1 text-muted">場所</div>
+                            <p class="card-text mb-auto">キャプション</p>
+                        </div>
+                    </div>
+                </div>
                 <div class="memory" style="top: 0px;">
                     <div class="frame-select"></div>
                     <p class="memory-date">Jun.10, 2022</p>
