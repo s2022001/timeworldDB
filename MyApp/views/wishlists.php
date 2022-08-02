@@ -30,21 +30,39 @@ if (!isset($_SESSION["user_id"])) {
           <div class="map_frame"></div>
         </div>
         <div class="wishlists col-md-6">
-<?php
-$wishlist_row = selectdata("wishlists",$user_id);
-$num_px = 0;
-for ($i = 0; $i < pg_num_rows($wishlist_row); $i++){
-    $rows = pg_fetch_array($wishlist_row,NULL,PGSQL_ASSOC);
-    $wishlist_id = $rows["diary_id"];
+        <?php
 
-    echo '<div class="wish" style="top: ${num_px}px;">';
-    echo '<div class="frame-select"></div>';
-    echo '<p class="wish_loc">'.$rows["spot_name"].'</p>';
-    echo '<p class="wish_category">'.$rows["category"].'</p>';
-    echo '<p class="wish_url">'.$rows["url"].'</p>';
-    echo '</div>';
+if (isset($_POST["search"])) {
+    $search_result = searchdata("wishlists",$_POST["input_search"],$user_id);
+    echo $search_result;
+    $num_px = 0;
+    for ($i = 0; $i < pg_num_rows($search_result); $i++){
+        $rows = pg_fetch_array($search_result,NULL,PGSQL_ASSOC);
+        echo '<div class="wish" style="top: ${num_px}px;">';
+        echo '<div class="frame-select"></div>';
+        echo '<p class="wish_loc">'.$rows["spot_name"].'</p>';
+        echo '<p class="wish_category">'.$rows["category"].'</p>';
+        echo '<p class="wish_url">'.$rows["url"].'</p>';
+        echo '</div>';
 
-    $num_px += 15;
+        $num_px += 15;
+    }
+} else {
+    $wishlist_row = selectdata("wishlists",$user_id);
+    $num_px = 0;
+    for ($i = 0; $i < pg_num_rows($wishlist_row); $i++){
+        $rows = pg_fetch_array($wishlist_row,NULL,PGSQL_ASSOC);
+        $wishlist_id = $rows["diary_id"];
+
+        echo '<div class="wish" style="top: ${num_px}px;">';
+        echo '<div class="frame-select"></div>';
+        echo '<p class="wish_loc">'.$rows["spot_name"].'</p>';
+        echo '<p class="wish_category">'.$rows["category"].'</p>';
+        echo '<p class="wish_url">'.$rows["url"].'</p>';
+        echo '</div>';
+
+        $num_px += 15;
+    }
 }
 ?>
           <div class="wish" style="top: 0px;">
@@ -95,20 +113,38 @@ for ($i = 0; $i < pg_num_rows($wishlist_row); $i++){
 
 <?php
 
-if (isset($_POST["search"])) {
-    $search_result = searchdata("wishlists",$_POST["input_search"],$user_id);
-    echo $search_result;
-    $num_px = 300;
-    for ($i = 0; $i < pg_num_rows($search_result); $i++){
-        $rows = pg_fetch_array($search_result,NULL,PGSQL_ASSOC);
-        echo $rows["spot_name"];
-        echo $rows["category"];
-        echo $rows["url"];
-        echo "<br>";
+// if (isset($_POST["search"])) {
+//     $search_result = searchdata("wishlists",$_POST["input_search"],$user_id);
+//     echo $search_result;
+//     $num_px = 0;
+//     for ($i = 0; $i < pg_num_rows($search_result); $i++){
+//         $rows = pg_fetch_array($search_result,NULL,PGSQL_ASSOC);
+//         echo '<div class="wish" style="top: ${num_px}px;">';
+//         echo '<div class="frame-select"></div>';
+//         echo '<p class="wish_loc">'.$rows["spot_name"].'</p>';
+//         echo '<p class="wish_category">'.$rows["category"].'</p>';
+//         echo '<p class="wish_url">'.$rows["url"].'</p>';
+//         echo '</div>';
 
-        $num_px += 15;
-    }
-}
+//         $num_px += 15;
+//     }
+// } else {
+//     $wishlist_row = selectdata("wishlists",$user_id);
+//     $num_px = 0;
+//     for ($i = 0; $i < pg_num_rows($wishlist_row); $i++){
+//         $rows = pg_fetch_array($wishlist_row,NULL,PGSQL_ASSOC);
+//         $wishlist_id = $rows["diary_id"];
+
+//         echo '<div class="wish" style="top: ${num_px}px;">';
+//         echo '<div class="frame-select"></div>';
+//         echo '<p class="wish_loc">'.$rows["spot_name"].'</p>';
+//         echo '<p class="wish_category">'.$rows["category"].'</p>';
+//         echo '<p class="wish_url">'.$rows["url"].'</p>';
+//         echo '</div>';
+
+//         $num_px += 15;
+//     }
+// }
 ?>
 
 <?php include("../templates/footer.php"); ?>
