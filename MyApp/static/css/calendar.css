@@ -18,11 +18,19 @@ body {
     font-family: Alice;
     font-weight: Regular;
     color: #232323;
+    padding: 0px 0px;
 }
 
 /* カレンダー */
+.v2_21 {
+    width: 675px;
+    height: 455px;
+    position: relative;
+    top: 150px;
+}
+
 .wrapper {
-    margin: 15px auto;
+    margin: 15px;
     max-width: 100%;
 }
 .calendar {
@@ -143,9 +151,10 @@ body {
 .memorys {
     width: 600px;
     height: 440px;
-    position: absolute;
-    top: 290px;
-    left: 800px;
+    /* position: absolute; */
+    /* top: 500px; */
+    left: 0px;
+    /* margin: auto; */
     overflow-y: scroll;
 }
 .frame-select {
@@ -166,13 +175,16 @@ body {
     position: relative;
     top: 0px;
     left: 0px;
+    /* margin: auto; */
+    background-color: #fff;
     border: 2px solid #C5C5C5;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-.memory-date {
+
+/* .memory-date {
     width: 200px;
     position: absolute;
     top: 0px;
@@ -195,16 +207,16 @@ body {
     left: 20px;
     font-size: 16px;
     text-align: left;
-}
-.memory {
+} */
+/* .memory {
     width: 600px;
     height: 134px;
     position: relative;
     left: 0px;
-}
+} */
 
 /* 作成 */
-.create {
+/* .create {
     width: 180px;
     height: 80px;
     position: absolute;
@@ -240,7 +252,7 @@ body {
     position: absolute;
     top: 20px;
     left: 30px;
-}
+} */
 
 /* map */
 .v8_367 {
@@ -258,7 +270,8 @@ body {
 }
 
 /* 検索 */
-.v39_173 {
+
+/* .v39_173 {
     width: 345px;
     height: 45px;
     position: absolute;
@@ -288,4 +301,4 @@ body {
     left: 17px;
     font-size: 24px;
     text-align: left;
-}
+} */

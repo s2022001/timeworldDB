@@ -27,7 +27,18 @@ if (!isset($_SESSION["user_id"])) {
 
 <?php
 
+$diary_id = $_POST["diary_id"];
 
+$diary_data = searchonedata($diary_id);
+
+for ($i = 0; $i < pg_num_rows($diary_data); $i++){
+    $rows = pg_fetch_array($diary_data,NULL,PGSQL_ASSOC);
+    $img_path = $config["upload_dir"].$rows["filename"];
+    echo $img_path;
+    echo '<h1>'.$rows["spot_name"].'</h1>';
+    echo "<p>".$rows["content"]."</p>";
+    echo '<img src='.$img_path.' width=50% height=100px></img>';
+}
 ?>
 
 <?php include("../templates/footer.php"); ?>
