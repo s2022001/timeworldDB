@@ -34,11 +34,8 @@ body {
     overflow: hidden;
 }
 .location {
-    /* width: 355px; */
     height: 100px;
     position: relative;
-    /* top: 100px; */
-    /* left: 0px; */
     margin: auto;
     overflow: hidden;
 }
