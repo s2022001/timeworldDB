@@ -18,6 +18,7 @@ body {
     font-family: Alice;
     font-weight: Regular;
     color: #232323;
+    padding: 0px 0px;
 }
 
 /* カレンダー */
@@ -148,7 +149,7 @@ body {
 
 /* スクロール */
 .memorys {
-    width: 100%;
+    width: 600px;
     height: 440px;
     position: relative;
     top: 0px;
