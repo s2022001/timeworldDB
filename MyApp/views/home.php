@@ -115,7 +115,7 @@ for ($i = 0; $i < pg_num_rows($diary_row); $i++){
     
     echo "<input type='hidden' name='diary_id' value='${diary_id}'>";
     // echo "<input type='submit' value='詳細'>";
-    echo '</div></div>';
+    echo '</div>';
     echo "</button>";
 
     echo "</form>";
