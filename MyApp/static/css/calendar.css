@@ -151,10 +151,10 @@ body {
 .memorys {
     width: 600px;
     height: 440px;
-    position: relative;
-    top: 100px;
+    position: absolute;
+    top: 500px;
     left: 0px;
-    margin: auto;
+    /* margin: auto; */
     overflow-y: scroll;
 }
 .frame-select {
