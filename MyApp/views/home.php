@@ -23,7 +23,7 @@ if (!isset($_SESSION["user_id"])) {
 <?php echo $user_id; ?>
 
         <!-- here is content -->
-        <div class="v2_21 col-md-6">
+        <div class="v2_21 col-md-12">
             <!-- カレンダー -->
             <div class="v2_85 col-md-6">
                 <!-- <div class="v2_83"></div>

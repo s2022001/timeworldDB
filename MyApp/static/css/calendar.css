@@ -152,7 +152,7 @@ body {
     width: 600px;
     height: 440px;
     position: relative;
-    /* top: -100px; */
+    top: 0px;
     /* left: 800px; */
     margin: auto;
     overflow-y: scroll;
