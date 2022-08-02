@@ -151,9 +151,9 @@ body {
 .memorys {
     width: 600px;
     height: 440px;
-    position: absolute;
-    top: 0px;
-    /* left: 800px; */
+    position: relative;
+    top: 100px;
+    left: 0px;
     margin: auto;
     overflow-y: scroll;
 }
