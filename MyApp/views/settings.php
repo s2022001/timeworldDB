@@ -49,7 +49,7 @@ for ($i = 0; $i < pg_num_rows($user_result); $i++){
     </div>
     <!-- signin -->
     <div class="v2_16">
-        <input type="submit" class="v2_17" name="submit" value="submit">
+        <input type="submit" class="v2_17" name="submit">
         <p class="v2_18">Change</p>
     </div>
 </div>
