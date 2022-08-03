@@ -39,24 +39,18 @@ for ($i = 0; $i < pg_num_rows($user_result); $i++){
     <p class="subtitle">Change Your Info</p>
     <!-- username -->
     <div class="v2_20">
-        <div class="v2_6">
-        <input type="text" name="input_username" value="<?php $username;?>" required>
-        </div>
+        <input type="text" class="v2_6" name="input_username" value="<?php $username;?>" required>
         <p class="v2_7">User Name</p>
     </div>
     <!-- password -->
     <div class="v2_19">
-        <div class="v2_8">
-        <input type="password" name="input_password" value="<?php $password;?>" required>
-        </div>
+        <input type="password" class="v2_8" name="input_password" value="<?php $password;?>" required>
         <p class="v2_9">Password</p>
     </div>
     <!-- signin -->
     <div class="v2_16">
-        <div class="v2_17">
-        <input type="submit" name="submit" value="submit">
-        </div>
-        <p class="v2_18">Register</p>
+        <input type="submit" class="v2_17" name="submit" value="submit">
+        <p class="v2_18">Change</p>
     </div>
 </div>
 </form>
@@ -64,6 +58,23 @@ for ($i = 0; $i < pg_num_rows($user_result); $i++){
 <?php
 if (isset($_POST["submit"])) {
     $input_username = $_POST["input_username"];
+    $input_password = $_POST["input_password"];
+
+    $user = checkuser($input_username,$input_password);
+
+
+    if ($user==="No exists such user") {
+        
+
+        $sql = "UPDATE users SET user_name='${input_username}', password='${input_password}' WHERE user_id=${user_id};";
+        updatedata($sql);
+
+        header("Location: home.php");
+        exit();
+
+    } else {
+        echo "check user :".$user;
+    }
 }
 
 ?>

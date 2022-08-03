@@ -41,6 +41,10 @@ function deletedata($tablename, $id){
     $result = pg_query("$query") or die("Query Failed:".pg_last_error());
 }
 
+function updatedata($sql){
+    $result = pg_query("$sql") or die("Query Failed:".pg_last_error());
+}
+
 function checkuser($username,$password){
     // $query = "SELECT * FROM users WHERE username=".$username." AND password=".$password.";";
     $query = "SELECT * FROM users WHERE user_name='${username}' AND password='${password}';";

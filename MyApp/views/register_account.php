@@ -22,23 +22,17 @@ require("../config.php");
     <p class="subtitle">Register</p>
     <!-- username -->
     <div class="v2_20">
-        <div class="v2_6">
-        <input type="text" name="input_username" required>
-        </div>
+        <input type="text" class="v2_6" name="input_username" required>
         <p class="v2_7">User Name</p>
     </div>
     <!-- password -->
     <div class="v2_19">
-        <div class="v2_8">
-        <input type="password" name="input_password" required>
-        </div>
+        <input type="password" class="v2_8" name="input_password" required>
         <p class="v2_9">Password</p>
     </div>
     <!-- signin -->
     <div class="v2_16">
-        <div class="v2_17">
-        <input type="submit" value="submit">
-        </div>
+        <input type="submit" class="v2_17" value="submit">
         <p class="v2_18">Register</p>
     </div>
 </div>
