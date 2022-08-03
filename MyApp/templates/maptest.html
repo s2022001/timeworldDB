@@ -37,9 +37,9 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.0/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet@1.3.0/dist/leaflet.js"></script>
         <script>
-            function map(loc, date, spot) {
+            function map(lat, lon, date, spot) {
                 var map = L.map('mapcontainer', { zoomControl: false });
-                var loc = loc;
+                var loc = [lat, lon];
                 var date = date;
                 var spot = spot;
                 map.setView(loc, 15);
@@ -58,7 +58,7 @@
             }
         </script>
     </head>
-    <body onload="map([35.8625, 139.6073], '2022/08/02', '埼玉大学')">
+    <body onload="map(35.8625, 139.6073, '2022/08/02', '埼玉大学')">
         <div id="mapcontainer" style="position:absolute;top:0;left:0;right:0;bottom:0;"></div>
     </body>
 </html>

@@ -22,14 +22,14 @@ if (!isset($_SESSION["user_id"])) {
 <?php include("../templates/header.php"); ?>
 
 <!-- here is content -->
-        <div class="v2_21 col-md-12">
+        <main class="v2_21 col-md-12" onload="map(<?php [$rows['lat'], $rows['lon']], '2022/08/02', '埼玉大学')">
             <div class="map">
                 <!-- mapの枠 -->
                 <div class="v8_151"></div>
             </div>
 
 
-    <?php
+<?php
 if (isset($_POST["search"])) {
     $search_result = searchdata("diary",$_POST["input_search"],$user_id);
     echo $search_result;
@@ -81,7 +81,7 @@ if (isset($_POST["search"])) {
 }
 
 ?>
-        </div>
+        </main>
 <?php
 
 
