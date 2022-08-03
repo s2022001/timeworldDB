@@ -6,9 +6,9 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.0/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet@1.3.0/dist/leaflet.js"></script>
         <script>
-            function map(loc, date, spot) {
+            function map(lat, lon, date, spot) {
                 var map = L.map('mapcontainer', { zoomControl: false });
-                var loc = loc;
+                var loc = [lat, lon];
                 var date = date;
                 var spot = spot;
                 map.setView(loc, 15);
@@ -31,11 +31,11 @@
 <?php
 $lat = 35.8625;
 $lon = 139.6073;
-$date = '2022/08/02';
-$loc = '埼玉大学';
+$date = '2022/08/03';
+$spot = '埼玉大学';
 
 ?>
-    <body onload="map(<?php '['.$lat.', '.$lon.'], '.$date.', '.$loc; ?>)">
+    <body onload="map(<?php $lat; ?>, <?php $lon ?>, <?php $date; ?>, <?php $spot; ?>)">
         <div id="mapcontainer" style="position:absolute;top:0;left:0;right:0;bottom:0;"></div>
     </body>
 </html>
