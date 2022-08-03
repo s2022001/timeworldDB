@@ -22,47 +22,66 @@ if (!isset($_SESSION["user_id"])) {
 <?php include("../templates/header.php"); ?>
 
 <!-- here is content -->
+        <div class="v2_21 col-md-12">
+            <div class="map">
+                <!-- mapの枠 -->
+                <div class="v8_151"></div>
+            </div>
 
-<div class="v8_197">
-    <div class="v8_148">
-        <div class="v8_151"></div>
-        <div class="v8_190"></div>
-    </div>
-    <div class="v8_368"></div>
-    <div class="v12_383">
-        <div class="v8_198"></div>
-        <span class="v8_374">Wish list</span>
-        <span class="v8_375">Memory</span>
-        <span class="v8_206">Diary</span>
-    </div>
-    <div class="v8_199">
-        <div class="v8_200"></div>
-        <div class="v8_201"></div>
-    </div>
-    <div class="v12_390">
-        <div class="v12_391"></div>
-        <div class="v12_392"></div>
-        <span class="v12_393">作成</span>
-    </div>
-    <div class="v30_89">
-        <div class="v30_90">
-            <div class="v30_91"></div>
-            <div class="name"></div>
-            <div class="name"></div>
-            <div class="v30_94"></div>
-            <span class="v30_95">Jun.10, 2022</span>
-            <span class="v30_96">新大久保</span>
-            <span class="v30_97">辛いものいっぱいかと思ったけどそうではなさそう…？</span>
-            <div class="v30_98"></div>
-            <span class="v30_99">Image</span>
+
+    <?php
+if (isset($_POST["search"])) {
+    $search_result = searchdata("diary",$_POST["input_search"],$user_id);
+    echo $search_result;
+    $num_px = 300;
+    for ($i = 0; $i < pg_num_rows($search_result); $i++){
+        $rows = pg_fetch_array($search_result,NULL,PGSQL_ASSOC);
+        $diary_id = $rows["diary_id"];
+
+        echo "<form action='detail_diary.php' method='POST' name='show_detail'>";
+        echo "<button type='submit' class='frame-normal flex-md-row mb-4 shadow-sm h-md-250'>";
+        echo '<div class="card-body d-flex flex-column align-items-start">';
+        echo '<h3 class="md-0"><p class="text-dark">'.$rows["register_at"].'</p></h3>';
+        echo '<p class="mb-1 text-muted">'.$rows["spot_name"].'</p>';
+        echo '<p class="mcard-text mb-auto">'.$rows["content"].'</p>';
+
+        
+        echo "<input type='hidden' name='diary_id' value='${diary_id}'>";
+        // echo "<input type='submit' value='詳細'>";
+        echo '</div>';
+        echo "</button>";
+
+        echo "</form>";
+    }
+} else {
+    $diary_row = selectdata("diary",$user_id);
+    $num_px = 0;
+    for ($i = 0; $i < pg_num_rows($diary_row); $i++){
+        $rows = pg_fetch_array($diary_row,NULL,PGSQL_ASSOC);
+        $diary_id = $rows["diary_id"];
+
+        echo "<form action='detail_diary.php' method='POST' name='show_detail'>";
+        echo "<button type='submit' class='frame-normal flex-md-row mb-4 shadow-sm h-md-250'>";
+        echo '<div class="card-body d-flex flex-column align-items-start">';
+        echo '<h3 class="md-0"><p class="text-dark">'.$rows["register_at"].'</p></h3>';
+        echo '<p class="mb-1 text-muted">'.$rows["spot_name"].'</p>';
+        echo '<p class="mcard-text mb-auto">'.$rows["content"].'</p>';
+
+        
+        echo "<input type='hidden' name='diary_id' value='${diary_id}'>";
+        // echo "<input type='submit' value='詳細'>";
+        echo '</div>';
+        echo "</button>";
+
+        echo "</form>";
+
+
+        $num_px += 15;
+    }
+}
+
+?>
         </div>
-        <div class="v30_100">
-            <div class="v30_101"></div>
-            <div class="name"></div>
-            <div class="name"></div>
-            <div class="v30_104"></div>
-            <span class="v30_105">Jun.04, 2022</span><span class="v30_106">越谷レイクタウン</span><span class="v30_107">VSパークに遊びに行った〜</span><div class="v30_108"></div><span class="v30_109">Image</span></div><div class="v30_110"><div class="v30_111"></div><div class="name"></div><div class="name"></div><div class="v30_114"></div><span class="v30_115">Jun.04, 2022</span><span class="v30_116">越谷レイクタウン</span><span class="v30_117">卵と私に初潜入！美味しかった〜！</span><div class="v30_118"></div><span class="v30_119">Image</span></div><div class="v30_120"><div class="v30_121"></div><div class="name"></div><div class="name"></div><div class="v30_124"></div><span class="v30_125">May.30, 2022</span><span class="v30_126">南大沢</span><span class="v30_127">やることやって南大沢へ！</span><div class="v30_128"></div><span class="v30_129">Image</span></div><div class="v30_130"><div class="v30_131"></div><div class="name"></div><div class="name"></div><div class="v30_134"></div><span class="v30_135">Jun.10, 2022</span><span class="v30_136">新大久保</span><span class="v30_137">辛いものいっぱいかと思ったけどそうではなさそう…？</span><div class="v30_138"></div><span class="v30_139">Image</span></div><div class="v30_140"><div class="v30_141"></div><div class="name"></div><div class="name"></div><div class="v30_144"></div><span class="v30_145">Jun.04, 2022</span><span class="v30_146">越谷レイクタウン</span><span class="v30_147">VSパークに遊びに行った〜</span><div class="v30_148"></div><span class="v30_149">Image</span></div><div class="v30_150"><div class="v30_151"></div><div class="name"></div><div class="name"></div><div class="v30_154"></div><span class="v30_155">Jun.04, 2022</span><span class="v30_156">越谷レイクタウン</span><span class="v30_157">卵と私に初潜入！美味しかった〜！</span><div class="v30_158"></div><span class="v30_159">Image</span></div><div class="v30_160"><div class="v30_161"></div><div class="name"></div><div class="name"></div><div class="v30_164"></div><span class="v30_165">May.30, 2022</span><span class="v30_166">南大沢</span><span class="v30_167">やることやって南大沢へ！</span><div class="v30_168"></div><span class="v30_169">Image</span></div></div><div class="v39_174"><div class="v39_176"></div><span class="v39_177">検索する</span><div class="v39_179"></div></div></div>
-
 <?php
 
 
