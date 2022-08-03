@@ -1,6 +1,6 @@
-function map(loc, date, spot) {
+function map(lat, lon, date, spot) {
     var map = L.map('mapcontainer', { zoomControl: false });
-    var loc = loc;
+    var loc = [lat, lon];
     var date = date;
     var spot = spot;
     map.setView(loc, 15);
