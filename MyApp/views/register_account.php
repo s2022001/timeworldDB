@@ -32,7 +32,7 @@ require("../config.php");
     </div>
     <!-- signin -->
     <div class="v2_16">
-        <input type="submit" class="v2_17" value="submit">
+        <input type="submit" class="v2_17">
         <p class="v2_18">Register</p>
     </div>
 </div>
