@@ -36,6 +36,9 @@
                                 <a class="nav-link nav-col" href="../views/wishlists.php">Wishlist</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link nav-col" href="../views/settings.php">Settings</a>
+                            </li>
+                            <li class="nav-item">
                                 <form action="../templates/header.php" method="POST">
                                     <input type="submit" name="pop" value="Log Out">
                                 </form>
