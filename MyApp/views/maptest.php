@@ -35,7 +35,7 @@ $date = '2022/08/03';
 $spot = '埼玉大学';
 
 ?>
-    <body onload="map(<?php $lat; ?>, <?php $lon; ?>, <?php $date; ?>, <?php $spot; ?>)">
+    <body onload="map(<?php echo $lat; ?>, <?php echo $lon; ?>, '<?php echo $date; ?>', '<?php echo $spot; ?>')">
         <div id="mapcontainer" style="position:absolute;top:0;left:0;right:0;bottom:0;"></div>
     </body>
 </html>
