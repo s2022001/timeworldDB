@@ -28,6 +28,7 @@ if (!isset($_SESSION["user_id"])) {
 <?php
 
 $diary_id = $_POST["diary_id"];
+echo $_SESSION["map_type"];
 
 $diary_data = searchonedata($diary_id);
 

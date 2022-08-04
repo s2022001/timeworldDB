@@ -14,9 +14,14 @@ $user_id = $_SESSION["user_id"];
 
 // session_start();
 if (!isset($_SESSION["user_id"])) {
-    header("Location: login.php");
-    exit();
+  header("Location: login.php");
+  exit();
 }
+if (isset($_SESSION["map_type"])) {
+  unset($_SESSION["map_type"]);
+}
+$_SESSION["map_type"] = "ALL_WISHLISTS";
+
 ?>
 
 <?php include("../templates/header.php"); ?>
@@ -27,7 +32,7 @@ if (!isset($_SESSION["user_id"])) {
       <div class="v8_291 col-md-12">
         <!-- map -->
         <div class="map col-md-6">
-          <div class="map_frame"></div>
+          <iframe src="maptest.php" class="map_frame"></iframe>
         </div>
         <div class="wishlists col-md-6">
         <?php

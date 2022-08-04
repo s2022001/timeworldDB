@@ -17,6 +17,10 @@ if (!isset($_SESSION["user_id"])) {
     header("Location: login.php");
     exit();
 }
+if (isset($_SESSION["map_type"])) {
+    unset($_SESSION["map_type"]);
+}
+$_SESSION["map_type"] = "ALL_DIARY";
 ?>
 
 <?php include("../templates/header.php"); ?>
