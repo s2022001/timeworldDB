@@ -39,9 +39,14 @@
                                 <a class="nav-link nav-col" href="../views/settings.php">Settings</a>
                             </li>
                             <li class="nav-item">
-                                <form action="../templates/header.php" method="POST">
-                                    <input type="submit" name="pop" value="Log Out">
-                                </form>
+                            <?php
+                            session_start();
+                            if (isset($_SESSION["user_id"])) {
+                                echo '<form action="../templates/header.php" method="POST">';
+                                echo '<input type="submit" name="pop" value="Log Out">';
+                                echo '</form>';
+                            }
+                            ?>
                             </li>
                         </ul>
                     </div>
