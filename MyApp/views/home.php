@@ -83,10 +83,10 @@ if (isset($_POST["search"])) {
 
         echo "<form action='detail_diary.php' method='POST' name='show_detail'>";
         echo "<button type='submit' class='frame-normal flex-md-row mb-4 shadow-sm h-md-250'>";
-        echo '<div class="card-body d-flex flex-column align-items-start">';
-        echo '<h3 class="md-0"><p class="text-dark">'.$rows["register_at"].'</p></h3>';
-        echo '<p class="mb-1 text-muted">'.$rows["spot_name"].'</p>';
-        echo '<p class="mcard-text mb-auto">'.$rows["content"].'</p>';
+        echo '<div class="memory d-flex flex-column align-items-start">';
+        echo '<h3 class="md-0"><p class="memory-date">'.$rows["register_at"].'</p></h3>';
+        echo '<p class="mb-1 memory-loc">'.$rows["spot_name"].'</p>';
+        echo '<p class="memory-cap mb-auto">'.$rows["content"].'</p>';
         echo "<input type='hidden' name='diary_id' value='${diary_id}'>";
         echo '</div>';
         echo "</button>";

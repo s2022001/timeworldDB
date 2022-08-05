@@ -184,7 +184,7 @@ body {
     border-bottom-right-radius: 10px;
 }
 
-/* .memory-date {
+.memory-date {
     width: 200px;
     position: absolute;
     top: 0px;
@@ -207,13 +207,13 @@ body {
     left: 20px;
     font-size: 16px;
     text-align: left;
-} */
-/* .memory {
+}
+.memory {
     width: 600px;
     height: 134px;
     position: relative;
     left: 0px;
-} */
+}
 
 /* 作成 */
 .hcreate {
@@ -297,7 +297,7 @@ body {
     font-size: 24px;
     text-align: left;
 }
-.hsearch_icon {
+.hsearch_icon img {
     width: 20px;
     height: 20px;
     position: absolute;
