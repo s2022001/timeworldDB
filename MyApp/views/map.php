@@ -31,21 +31,23 @@ if (!isset($_SESSION["user_id"])) {
     
 <?php
 session_start();
-$lat = 35.8625;
-$lon = 139.6073;
-$date = '2022/08/03';
-$spot = '埼玉大学';
+// $lat = 35.8625;
+// $lon = 139.6073;
+// $date = '2022/08/03';
+// $spot = '埼玉大学';
 
 if ($_SESSION["map_type"] === "ALL_DIARY") {
     $lat = 35.677660131140485;
     $lon = 139.66630912154665;
     $date = "2000/07/30";
     $spot = "anthouse";
+    $cap = "おうちです";
 } elseif ($_SESSION["map_type"] === "ALL_WISHLISTS") {
     $lat = 35.677660131140485;
     $lon = 139.66630912154665;
     $date = "2000/07/30";
     $spot = "JOCKY";
+    $cap = "てすと";
 }
 
 ?>
