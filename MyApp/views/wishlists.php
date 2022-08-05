@@ -74,30 +74,6 @@ if (isset($_POST["search"])) {
     }
 }
 ?>
-          <div class="wish" style="top: 0px;">
-            <div class="frame_select"></div>
-            <span class="wish_loc">清里バーガー</span>
-            <span class="wish_category">foof</span>
-            <span class="wish_url">https://www.makiba-res.com/</span>
-          </div>
-          <div class="wish" style="top: 15px;">
-            <div class="frame_normal"></div>
-            <span class="wish_loc">赤福の店舗</span>
-            <span class="wish_category">food</span>
-            <span class="wish_url">https://www.akafuku.co.jp/</span>
-          </div>
-          <div class="wish" style="top: 30px;">
-            <div class="frame_normal"></div>
-            <span class="wish_loc">モスプレミアム</span>
-            <span class="wish_category">food</span>
-            <span class="wish_url">https://www.mospremium.jp/index.html</span>
-          </div>
-          <div class="wish" style="top: 45px;">
-            <div class="frame_normal"></div>
-            <span class="wish_loc">グラニースミス</span>
-            <span class="wish_category">food</span>
-            <span class="wish_url">https://www.grannysmith-pie.com/</span>
-          </div>
         </div>
         <!-- 作成 -->
         <div class="add">

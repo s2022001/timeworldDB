@@ -26,6 +26,7 @@ $_SESSION["map_type"] = "CREATEWISHLIST";
 
 <?php include("../templates/header.php"); ?>
 
+
 <!-- here is content -->
 <form action="<?php $thisfilename;?>" method="POST">
   <body class="col-md-10">
@@ -41,6 +42,7 @@ $_SESSION["map_type"] = "CREATEWISHLIST";
       <p class="column">Location</p>
       <br>
       <a href="insertlocation.php">地図入力はこちら（調整中）</a>
+      <h1><?php $_SESSION["location"];?></h1>
     </div>
     <div class="category col-md-6">
       
