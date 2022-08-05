@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS diary;
 DROP TABLE IF EXISTS wishlists;
 DROP TABLE IF EXISTS diary_diary_id_seq;
 DROP TABLE IF EXISTS wishlists;
+DROP TABLE IF EXISTS info;
 
 
 CREATE TABLE users (
@@ -37,6 +38,14 @@ CREATE TABLE wishlists (
 	user_id        INTEGER
 );
 
+
+CREATE TABLE info (
+    id SERIAL PRIMARY KEY,
+    register_at DEFAULT NOW(),
+    user_id INTEGER,
+    info_type TEXT,
+    content TEXT
+);
 
 
 CREATE OR REPLACE FUNCTION insert_location() RETURNS trigger AS $$

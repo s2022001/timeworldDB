@@ -17,6 +17,8 @@ function insertdata($tablename,$data){
         $columns = "(spot_name, lat, lon, category, url, user_id)";
     } elseif ($tablename === "users") {
         $columns = "(user_name, password)";
+    } elseif ($tablename === "info") {
+        $columns = "(user_id,info_type,content)"; 
     } else {
         return "tablename Error";
     }

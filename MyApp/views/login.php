@@ -70,25 +70,6 @@ if (isset($_POST["pg_ra"])) {
         echo "check user :".$user;
     }
 }
-// request.method == "POST"
-// $username = $_POST["input_username"];
-// $pass = $_POST["input_password"];
-
-// $user = checkuser($username,$pass);
-// // $user=11;
-
-// if (is_numeric($user)===true) {
-//     session_start();
-
-//     $_SESSION["user_id"] = $user;
-//     echo $_SESSION["user_id"];
-
-//     header("Location: index.php");
-//     exit();
-
-// } else {
-//     echo "check user :".$user;
-// }
 
 ?>
 
