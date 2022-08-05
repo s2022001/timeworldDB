@@ -101,7 +101,7 @@ function extractlocation(map_type) {
                 "lon":lng
             };
             if (map_type === "CREATEDIARY") {
-                fetch("../../views/create_diary.php", {
+                fetch("create_diary.php", {
                     method: "POST",
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(data)
@@ -111,7 +111,7 @@ function extractlocation(map_type) {
                 location.href = "create_diary.php";
 
             } else if (map_type === "CREATEWISHLIST") {
-                fetch("../../views/create_wishlist.php", {
+                fetch("create_wishlist.php", {
                     method: "POST",
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(data)
