@@ -151,8 +151,8 @@ body {
 .hmemorys {
     width: 600px;
     height: 440px;
-    position: absolute;
-    top: 0px;
+    /* position: absolute; */
+    /* top: 0px; */
     left: 0px;
     /* margin: auto; */
     overflow-y: scroll;
@@ -216,14 +216,14 @@ body {
 } */
 
 /* 作成 */
-/* .create {
+.hcreate {
     width: 180px;
     height: 80px;
     position: absolute;
     top: 220px;
     left: 1260px;
 }
-.create_btn {
+.hcreate_btn {
     width: 130px;
     height: 45px;
     opacity: 0.2;
@@ -237,7 +237,7 @@ body {
     border-bottom-right-radius: 30px;
     box-shadow: 0px 0px 7px #636363;
 }
-.create_txt {
+.hcreate_txt {
     width: 40px;
     color: #636363;
     position: absolute;
@@ -246,13 +246,13 @@ body {
     font-size: 20px;
     text-align: right;
 }
-.create_icon img {
+.hcreate_icon img {
     width: 20px;
     height: 20px;
     position: absolute;
     top: 20px;
     left: 30px;
-} */
+}
 
 /* map */
 .v8_367 {
@@ -266,7 +266,7 @@ body {
 
 /* 検索 */
 
-/* .v39_173 {
+.hsearch {
     width: 345px;
     height: 45px;
     position: absolute;
@@ -274,7 +274,7 @@ body {
     left: 800px;
     overflow: hidden;
 }
-.v39_170 {
+.hsearch_frame {
     width: 300px;
     height: 45px;
     background: #EAEAEA;
@@ -288,7 +288,7 @@ body {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-.v39_172 {
+.hsearch_txt {
     width: 97px;
     color: #969595;
     position: absolute;
@@ -296,4 +296,4 @@ body {
     left: 17px;
     font-size: 24px;
     text-align: left;
-} */
+}

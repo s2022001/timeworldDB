@@ -70,7 +70,7 @@ $_SESSION["map_type"] = "ALL_DIARY";
             </div>
 
             <!-- スクロール -->
-            <div class="hmemorys">
+            <div class="hmemorys" style="top: 0px; position: absolute;">
 
 <?php
 if (isset($_POST["search"])) {
@@ -124,11 +124,11 @@ if (isset($_POST["search"])) {
 
             <!-- 作成 -->
             <form action="<?php $thisfilename ;?>" method="POST">
-                <div class="create">
+                <div class="hcreate">
                     
-                    <a href="create_diary.php"><input type="button" class="create_btn"></a>
-                    <p class="create_txt">作成</p>
-                    <p class="create_icon"><img src="../static/icon/create_icon.png"></p>
+                    <a href="create_diary.php"><input type="button" class="hcreate_btn"></a>
+                    <p class="hcreate_txt">作成</p>
+                    <p class="hcreate_icon"><img src="../static/icon/create_icon.png"></p>
                     
                     <input type="submit" name="create">
                     
@@ -137,10 +137,10 @@ if (isset($_POST["search"])) {
                 
 
                 <!-- 検索 -->
-                <div class="search">
+                <div class="hsearch">
                     <input type="submit" name="search" class="search_icon">
-                    <input type="text" class="search_frame" name="input_search">
-                    <p class="search_txt">検索する</p>
+                    <input type="text" class="hsearch_frame" name="input_search">
+                    <p class="hsearch_txt">検索する</p>
                     
                     
                 </div>
