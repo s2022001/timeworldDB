@@ -19,72 +19,37 @@ if (!isset($_SESSION["user_id"])) {
 }
 ?>
 
-<?php include("../templates/header.php"); ?>
-
-<!-- here is content -->
-        <main class="v2_21 col-md-12" onload="map(<?php [$rows['lat'], $rows['lon']], '2022/08/02', '埼玉大学')">
-            <div class="map">
-                <!-- mapの枠 -->
-                <div class="v8_151"></div>
-            </div>
-
-
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>map</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.0/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.3.0/dist/leaflet.js"></script>
+        <script src="../static/js/myjs.js"></script>
+    </head>
+    
 <?php
-if (isset($_POST["search"])) {
-    $search_result = searchdata("diary",$_POST["input_search"],$user_id);
-    echo $search_result;
-    $num_px = 300;
-    for ($i = 0; $i < pg_num_rows($search_result); $i++){
-        $rows = pg_fetch_array($search_result,NULL,PGSQL_ASSOC);
-        $diary_id = $rows["diary_id"];
+session_start();
+$lat = 35.8625;
+$lon = 139.6073;
+$date = '2022/08/03';
+$spot = '埼玉大学';
 
-        echo "<form action='detail_diary.php' method='POST' name='show_detail'>";
-        echo "<button type='submit' class='frame-normal flex-md-row mb-4 shadow-sm h-md-250'>";
-        echo '<div class="card-body d-flex flex-column align-items-start">';
-        echo '<h3 class="md-0"><p class="text-dark">'.$rows["register_at"].'</p></h3>';
-        echo '<p class="mb-1 text-muted">'.$rows["spot_name"].'</p>';
-        echo '<p class="mcard-text mb-auto">'.$rows["content"].'</p>';
-
-        
-        echo "<input type='hidden' name='diary_id' value='${diary_id}'>";
-        // echo "<input type='submit' value='詳細'>";
-        echo '</div>';
-        echo "</button>";
-
-        echo "</form>";
-    }
-} else {
-    $diary_row = selectdata("diary",$user_id);
-    $num_px = 0;
-    for ($i = 0; $i < pg_num_rows($diary_row); $i++){
-        $rows = pg_fetch_array($diary_row,NULL,PGSQL_ASSOC);
-        $diary_id = $rows["diary_id"];
-
-        echo "<form action='detail_diary.php' method='POST' name='show_detail'>";
-        echo "<button type='submit' class='frame-normal flex-md-row mb-4 shadow-sm h-md-250'>";
-        echo '<div class="card-body d-flex flex-column align-items-start">';
-        echo '<h3 class="md-0"><p class="text-dark">'.$rows["register_at"].'</p></h3>';
-        echo '<p class="mb-1 text-muted">'.$rows["spot_name"].'</p>';
-        echo '<p class="mcard-text mb-auto">'.$rows["content"].'</p>';
-
-        
-        echo "<input type='hidden' name='diary_id' value='${diary_id}'>";
-        // echo "<input type='submit' value='詳細'>";
-        echo '</div>';
-        echo "</button>";
-
-        echo "</form>";
-
-
-        $num_px += 15;
-    }
+if ($_SESSION["map_type"] === "ALL_DIARY") {
+    $lat = 35.677660131140485;
+    $lon = 139.66630912154665;
+    $date = "2000/07/30";
+    $spot = "anthouse";
+} elseif ($_SESSION["map_type"] === "ALL_WISHLISTS") {
+    $lat = 35.677660131140485;
+    $lon = 139.66630912154665;
+    $date = "2000/07/30";
+    $spot = "JOCKY";
 }
 
 ?>
-        </main>
-<?php
-
-
-?>
-
-<?php include("../templates/footer.php"); ?>
+    <body onload="map(<?php echo $lat; ?>, <?php echo $lon; ?>, '<?php echo $date; ?>', '<?php echo $spot; ?>')">
+        <div id="mapcontainer" style="position:absolute;top:0;left:0;right:0;bottom:0;"></div>
+    </body>
+</html>
