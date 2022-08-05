@@ -32,7 +32,7 @@ $_SESSION["map_type"] = "ALL_WISHLISTS";
       <div class="v8_291 col-md-12">
         <!-- map -->
         <div class="map col-md-6">
-          <iframe src="maptest.php" class="map_frame"></iframe>
+          <iframe src="map.php" class="map_frame"></iframe>
         </div>
         <div class="wishlists col-md-6">
         <?php
