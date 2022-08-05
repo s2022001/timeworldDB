@@ -220,7 +220,6 @@ body {
     width: 180px;
     height: 80px;
     position: absolute;
-    /* top: 220px; */
     top: 0px;
     left: 1260px;
 }
@@ -271,7 +270,6 @@ body {
     width: 345px;
     height: 45px;
     position: absolute;
-    /* top: 225px; */
     top: 0px;
     left: 800px;
     overflow: hidden;
@@ -282,7 +280,7 @@ body {
     background: #EAEAEA;
     opacity: 0.57;
     position: relative;
-    top: 0px;
+    top: 5px;
     left: 0px;
     border: 1px solid #232323;
     border-top-left-radius: 10px;
