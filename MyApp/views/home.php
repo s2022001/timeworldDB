@@ -70,7 +70,7 @@ $_SESSION["map_type"] = "ALL_DIARY";
             </div>
 
             <!-- スクロール -->
-            <div class="memorys" style="top: 0px; position: absolute;">
+            <div class="memorys" style="top: 50px; position: absolute;">
 
 <?php
 if (isset($_POST["search"])) {
