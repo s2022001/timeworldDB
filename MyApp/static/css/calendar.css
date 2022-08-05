@@ -148,11 +148,11 @@ body {
 
 
 /* スクロール */
-.memorys {
+.hmemorys {
     width: 600px;
     height: 440px;
-    /* position: absolute; */
-    /* top: 500px; */
+    position: absolute;
+    top: 0px;
     left: 0px;
     /* margin: auto; */
     overflow-y: scroll;
@@ -258,11 +258,6 @@ body {
 .v8_367 {
     width: 52px;
     height: 52px;
-    background: url("../images/v8_367.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
     position: absolute;
     top: 835px;
     left: 47px;
