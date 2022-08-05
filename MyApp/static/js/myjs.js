@@ -100,13 +100,23 @@ function extractlocation(map_type) {
                 "lat":lat,
                 "lon":lng
             };
-            fetch("../../views/create_wishlist.php", {
-                method: "POST",
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(res => {console.log(res);})
+            if (map_type === "CREATEDIARY") {
+                fetch("../../views/create_diary.php", {
+                    method: "POST",
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(res => {console.log(res);})
+            } else if (map_type === "CREATEWISHLIST") {
+                fetch("../../views/create_wishlist.php", {
+                    method: "POST",
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(res => {console.log(res);})
+            }
             location.href = "create_diary.php";
         }
     } );
