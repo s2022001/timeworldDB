@@ -55,3 +55,19 @@ function init() {
     //マーカー全体が入るように地図範囲を設定する
     map.fitBounds(bound);
 }
+
+function extractlocation() {
+    var map = L.map('mapcontainer', { zoomControl: false });
+    map.setView([35,135], 15);
+    L.tileLayer('https://c.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: "<a href='https://www.openstreetmap.org/copyright' target='_blank'>OpenStreetMap</a> contributors, "
+    }).addTo(map);
+    //クリックイベント
+    map.on('click', function(e) {
+        //クリック位置経緯度取得
+        lat = e.latlng.lat;
+        lng = e.latlng.lng;
+        //経緯度表示
+        alert("lat: " + lat + ", lng: " + lng);
+    } );
+}
