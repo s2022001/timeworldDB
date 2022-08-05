@@ -108,6 +108,8 @@ function extractlocation(map_type) {
                 })
                 .then(response => response.json())
                 .then(res => {console.log(res);})
+                location.href = "create_diary.php";
+
             } else if (map_type === "CREATEWISHLIST") {
                 fetch("../../views/create_wishlist.php", {
                     method: "POST",
@@ -116,8 +118,9 @@ function extractlocation(map_type) {
                 })
                 .then(response => response.json())
                 .then(res => {console.log(res);})
+                location.href = "create_wishlist.php";
             }
-            location.href = "create_diary.php";
+            
         }
     } );
 }
