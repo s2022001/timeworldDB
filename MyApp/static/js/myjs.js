@@ -56,8 +56,10 @@ function init() {
     map.fitBounds(bound);
 }
 
-function extractlocation() {
+function extractlocation(map_type) {
     var map = L.map('mapcontainer', { zoomControl: false });
+    var map_type = map_type;
+    console.log(map_type);
     map.setView([35,135], 15);
     L.tileLayer('https://c.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: "<a href='https://www.openstreetmap.org/copyright' target='_blank'>OpenStreetMap</a> contributors, "
@@ -68,6 +70,10 @@ function extractlocation() {
         lat = e.latlng.lat;
         lng = e.latlng.lng;
         //経緯度表示
-        alert("lat: " + lat + ", lng: " + lng);
+        let ans = window.confirm(map_type + "lat: " + lat + ", lng: " + lng);
+        // confirm Yes
+        if (ans) {
+            location.href = "create_diary.php";
+        }
     } );
 }

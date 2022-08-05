@@ -17,6 +17,11 @@ if (!isset($_SESSION["user_id"])) {
     header("Location: login.php");
     exit();
 }
+
+if (isset($_SESSION["map_type"])) {
+    unset($_SESSION["map_type"]);
+}
+$_SESSION["map_type"] = "CREATEDIARY";
 ?>
 
 <?php include("../templates/header.php"); ?>
@@ -39,8 +44,8 @@ if (!isset($_SESSION["user_id"])) {
     <div class="location">
         <p class="column">Location</p>
         <br>
-        <a href="insertlocation.php">地図入力はこちら</a>
-        <input type="text" class="location_frame" name="input_location">
+        <a href="insertlocation.php">地図入力はこちら（調整中）</a>
+        <input type="text" class="location_frame" id="diarylocation" name="input_location">
     </div>
 
 

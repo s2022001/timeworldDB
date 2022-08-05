@@ -17,6 +17,11 @@ if (!isset($_SESSION["user_id"])) {
     header("Location: login.php");
     exit();
 }
+
+if (isset($_SESSION["map_type"])) {
+  unset($_SESSION["map_type"]);
+}
+$_SESSION["map_type"] = "CREATEWISHLIST";
 ?>
 
 <?php include("../templates/header.php"); ?>
@@ -31,9 +36,11 @@ if (!isset($_SESSION["user_id"])) {
     </div>
     <div class="location col-md-6" style="top: 130px; left: 0px; width: 355px;">
       
-      <input type="text" class="frame" name="input_location" required>
+      <input type="text" class="frame" id="wishlistlocation" name="input_location" required>
       
       <p class="column">Location</p>
+      <br>
+      <a href="insertlocation.php">地図入力はこちら（調整中）</a>
     </div>
     <div class="category col-md-6">
       
