@@ -42,8 +42,11 @@ $_SESSION["map_type"] = "CREATEWISHLIST";
     <?php
       $raw = file_get_contents('php://input');
       $data = json_decode($raw);
+      $res = $data;
 
-      $loc = $_POST["lat"] + ', ' + $_POST["lon"];
+      $loc = $res["lat"] + ', ' + $res["lon"];
+      echo $loc;
+      echo json_encode($res);
     ?>
 
       <input type="text" class="frame" id="wishlistlocation" name="input_location" value="<?php $loc;?>" required>
