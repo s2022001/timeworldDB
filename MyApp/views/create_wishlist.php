@@ -46,7 +46,8 @@ $_SESSION["map_type"] = "CREATEWISHLIST";
       <a href="insertlocation.php">地図入力はこちら（調整中）</a>
 
       <?php
-      // if (isset($_POST[""]))
+      $raw = file_get_contents('php://input');
+      $data = json_decode($raw);
       ?>
 
     </div>
