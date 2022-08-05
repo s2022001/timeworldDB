@@ -96,6 +96,17 @@ function extractlocation(map_type) {
         let ans = window.confirm(map_type + "lat: " + lat + ", lng: " + lng);
         // confirm Yes
         if (ans) {
+            var data = {
+                "lat":lat,
+                "lon":lng
+            };
+            fetch("../../views/create_wishlist.php", {
+                method: "POST",
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(res => {console.log(res);})
             location.href = "create_diary.php";
         }
     } );
