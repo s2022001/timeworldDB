@@ -148,7 +148,7 @@ body {
 
 
 /* スクロール */
-.hmemorys {
+.memorys {
     width: 600px;
     height: 440px;
     /* position: absolute; */
@@ -220,7 +220,7 @@ body {
     width: 180px;
     height: 80px;
     position: absolute;
-    top: 220px;
+    /* top: 220px; */
     left: 1260px;
 }
 .hcreate_btn {
@@ -270,7 +270,7 @@ body {
     width: 345px;
     height: 45px;
     position: absolute;
-    top: 225px;
+    /* top: 225px; */
     left: 800px;
     overflow: hidden;
 }
