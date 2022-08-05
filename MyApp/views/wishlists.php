@@ -44,7 +44,7 @@ if (isset($_POST["search"])) {
     for ($i = 0; $i < pg_num_rows($search_result); $i++){
         $rows = pg_fetch_array($search_result,NULL,PGSQL_ASSOC);
         echo '<div class="wish" style="top: ${num_px}px;">';
-        echo '<div class="frame-select"></div>';
+        echo '<div class="frame-normal"></div>';
         echo '<p class="wish_loc">'.$rows["spot_name"].'</p>';
         echo '<p class="wish_category">'.$rows["category"].'</p>';
         $url = $rows["url"];
@@ -62,7 +62,7 @@ if (isset($_POST["search"])) {
         $wishlist_id = $rows["diary_id"];
 
         echo '<div class="wish" style="top: ${num_px}px;">';
-        echo '<div class="frame-select"></div>';
+        echo '<div class="frame-normal"></div>';
         echo '<p class="wish_loc">'.$rows["spot_name"].'</p>';
         echo '<p class="wish_category">'.$rows["category"].'</p>';
         $url = $rows["url"];
