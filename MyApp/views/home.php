@@ -87,10 +87,7 @@ if (isset($_POST["search"])) {
         echo '<h3 class="md-0"><p class="text-dark">'.$rows["register_at"].'</p></h3>';
         echo '<p class="mb-1 text-muted">'.$rows["spot_name"].'</p>';
         echo '<p class="mcard-text mb-auto">'.$rows["content"].'</p>';
-
-        
         echo "<input type='hidden' name='diary_id' value='${diary_id}'>";
-        // echo "<input type='submit' value='詳細'>";
         echo '</div>';
         echo "</button>";
 
@@ -109,10 +106,7 @@ if (isset($_POST["search"])) {
         echo '<h3 class="md-0"><p class="text-dark">'.$rows["register_at"].'</p></h3>';
         echo '<p class="mb-1 text-muted">'.$rows["spot_name"].'</p>';
         echo '<p class="mcard-text mb-auto">'.$rows["content"].'</p>';
-
-        
         echo "<input type='hidden' name='diary_id' value='${diary_id}'>";
-        // echo "<input type='submit' value='詳細'>";
         echo '</div>';
         echo "</button>";
 
