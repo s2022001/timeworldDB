@@ -70,32 +70,7 @@ $_SESSION["map_type"] = "ALL_DIARY";
             </div>
 
             <!-- スクロール -->
-            <div class="memorys" style="top: 0px; position: absolute;">
-
-            <!-- 作成 -->
-            <!-- <form action="<?php $thisfilename ;?>" method="POST">
-                <div class="create">
-                    
-                    <a href="create_diary.php"><input type="button" class="create_btn"></a>
-                    <p class="create_txt">作成</p>
-                    <p class="create_icon"><img src="../static/icon/create_icon.png"></p> -->
-                    
-                    <!-- <input type="submit" name="create"> -->
-                    
-                <!-- </div> -->
-
-                
-
-                <!-- 検索 -->
-                <!-- <div class="v39_173"> -->
-                    <!-- <div class="v39_170"></div> -->
-                    <!-- <input type="submit" name="search">
-                    <input type="text" class="v39_170" name="input_search">
-                    <p class="v39_172">検索する</p>
-                    
-                    
-                </div>
-            </form> -->
+            <div class="hmemorys">
 
 <?php
 if (isset($_POST["search"])) {
@@ -144,5 +119,31 @@ if (isset($_POST["search"])) {
 
 
 ?>
+
+            </div>
+
+            <!-- 作成 -->
+            <form action="<?php $thisfilename ;?>" method="POST">
+                <div class="create">
+                    
+                    <a href="create_diary.php"><input type="button" class="create_btn"></a>
+                    <p class="create_txt">作成</p>
+                    <p class="create_icon"><img src="../static/icon/create_icon.png"></p>
+                    
+                    <input type="submit" name="create">
+                    
+                </div>
+
+                
+
+                <!-- 検索 -->
+                <div class="search">
+                    <input type="submit" name="search" class="search_icon">
+                    <input type="text" class="search_frame" name="input_search">
+                    <p class="search_txt">検索する</p>
+                    
+                    
+                </div>
+            </form>
 
 <?php include("../templates/footer.php"); ?>
