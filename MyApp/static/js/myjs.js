@@ -18,3 +18,40 @@ function map(lat, lon, date, spot, cap) {
     L.marker(loc).bindPopup(popup).bindTooltip(spot).addTo(map);
     // L.marker([35.8561, 139.6098]).bindPopup(popup2).bindTooltip("桜区役所").addTo(map);
 }
+
+
+//マーカーに表示したい対象の緯度経度とポップアップする名称を設定
+// var markerList = [
+//     { pos: [35.8645472, 139.6048663], name: "セブンイレブン浦和埼玉大学店" },
+//     { pos: [35.8689857, 139.6086909], name: "セブンイレブンさいたま大久保店" },
+//     { pos: [35.871305, 139.6128431], name: "ファミリーマート浦和上大久保店" },
+//     { pos: [35.8665389, 139.6133905], name: "ミニストップさいたま上大久保店" },
+//     { pos: [35.8650306, 139.6070633], name: "ローソン埼玉大学店" }
+// ];
+function markerlists(lat, lon, date, spot, cap){
+    markerlists.loc = [lat, lon];
+    markerlists.date = date;
+    markerlists.spot = spot;
+    markerlists.cap = cap;
+
+    console.log(markerlists);
+}
+
+function init() {
+    var map = L.map('mapcontainer');
+    L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', {
+        attribution: "<a href='https://maps.gsi.go.jp/development/ichiran.html' target='_blank'>地理院タイル</a>"
+    }).addTo(map);
+    //マーカー全体が入るボックスを作る
+    var bound = L.latLngBounds(markerList[0].pos, markerList[0].pos);
+    //markerListの設定でマーカーを追加
+    for (var num in markerList) {
+        var mk = markerList[num];
+        var popup = L.popup().setContent(mk.name);
+        L.marker(mk.pos, { title: mk.name }).bindPopup(popup).addTo(map);
+        //マーカー全体が入るボックスを広げる
+        bound.extend(mk.pos);
+    }
+    //マーカー全体が入るように地図範囲を設定する
+    map.fitBounds(bound);
+}

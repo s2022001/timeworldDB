@@ -51,7 +51,8 @@ if ($_SESSION["map_type"] === "ALL_DIARY") {
 }
 
 ?>
-    <body onload="map(<?php echo $lat; ?>, <?php echo $lon; ?>, '<?php echo $date; ?>', '<?php echo $spot; ?>', '<?php echo $cap; ?>')">
+    <!-- <body onload="map(<?php echo $lat; ?>, <?php echo $lon; ?>, '<?php echo $date; ?>', '<?php echo $spot; ?>', '<?php echo $cap; ?>')"> -->
+    <body onload="markerlists(<?php echo $lat; ?>, <?php echo $lon; ?>, '<?php echo $date; ?>', '<?php echo $spot; ?>', '<?php echo $cap; ?>')">
         <div id="mapcontainer" style="position:absolute;top:0;left:0;right:0;bottom:0;"></div>
     </body>
 </html>
