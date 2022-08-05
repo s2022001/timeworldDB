@@ -90,5 +90,4 @@ if ($_SESSION["map_type"] === "ALL_DIARY") {
     </script>
     </body>
 
-
 </html>
