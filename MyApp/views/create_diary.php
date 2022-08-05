@@ -38,8 +38,11 @@ if (!isset($_SESSION["user_id"])) {
 
     <div class="location">
         <p class="column">Location</p>
+        <br>
+        <a href="insertlocation.php">地図入力はこちら</a>
         <input type="text" class="location_frame" name="input_location">
     </div>
+
 
     <div class="text">
         <p class="column">Text</p>
