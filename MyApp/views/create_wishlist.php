@@ -24,6 +24,8 @@ if (isset($_SESSION["map_type"])) {
 $_SESSION["map_type"] = "CREATEWISHLIST";
 ?>
 
+
+
 <?php include("../templates/header.php"); ?>
 
 
@@ -42,7 +44,11 @@ $_SESSION["map_type"] = "CREATEWISHLIST";
       <p class="column">Location</p>
       <br>
       <a href="insertlocation.php">地図入力はこちら（調整中）</a>
-      <h1><?php $_SESSION["location"];?></h1>
+
+      <?php
+      // if (isset($_POST[""]))
+      ?>
+
     </div>
     <div class="category col-md-6">
       
