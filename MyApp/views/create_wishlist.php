@@ -38,16 +38,19 @@ $_SESSION["map_type"] = "CREATEWISHLIST";
       <p class="column">Spot Name</p>
     </div>
     <div class="location col-md-6" style="top: 130px; left: 0px; width: 355px;">
-      
-      <input type="text" class="frame" id="wishlistlocation" name="input_location" required>
+
+    <?php
+      $raw = file_get_contents('php://input');
+      $data = json_decode($raw);
+
+      $loc = $_POST["lat"] + ', ' + $_POST["lon"];
+    ?>
+
+      <input type="text" class="frame" id="wishlistlocation" name="input_location" value="<?php $loc;?>" required>
       
       <p class="column">Location</p>
       <br>
       <a href="insertlocation.php">地図入力はこちら（調整中）</a>
-
-      <?php
-      // if (isset($_POST[""]))
-      ?>
 
     </div>
     <div class="category col-md-6">
