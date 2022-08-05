@@ -44,7 +44,7 @@ $_SESSION["map_type"] = "CREATEWISHLIST";
       $data = json_decode($raw);
       $res = $data;
 
-      $loc = $res["lat"] + ', ' + $res["lon"];
+      $loc = $_POST["lat"] + ', ' + $_POST["lon"];
       echo $loc;
       echo json_encode($res);
     ?>
