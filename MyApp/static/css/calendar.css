@@ -193,10 +193,11 @@ body {
     text-align: left;
 }
 .memory-loc {
-    width: 151px;
+    width: 550px;
     position: absolute;
+    color: #636363;
     top: 47px;
-    left: 40px;
+    left: 20px;
     font-size: 16px;
     text-align: left;
 }
@@ -280,7 +281,7 @@ body {
     background: #EAEAEA;
     opacity: 0.57;
     position: relative;
-    top: 5px;
+    top: 0px;
     left: 0px;
     border: 1px solid #232323;
     border-top-left-radius: 10px;
