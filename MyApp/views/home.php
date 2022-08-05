@@ -143,8 +143,8 @@ if (isset($_POST["search"])) {
                         <p class="hsearch_icon"><img src="../static/icon/search.png"></p>
                     </div>
                     
-                    <p class="hsearch_txt">検索する</p>
-                    <input type="text" name="input_search" class="hsearch_frame">
+                    <!-- <p class="hsearch_txt">検索する</p> -->
+                    <input type="text" name="input_search" placeholder="検索する" class="hsearch_frame">
                     
                 </div>
             </form>
