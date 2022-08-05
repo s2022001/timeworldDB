@@ -56,10 +56,33 @@ function init() {
     map.fitBounds(bound);
 }
 
+
+function dblocation(json) {
+    var map = L.map('mapcontainer');
+    L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', {
+        attribution: "<a href='https://maps.gsi.go.jp/development/ichiran.html' target='_blank'>地理院タイル</a>"
+    }).addTo(map);
+    //マーカー全体が入るボックスを作る
+    var bound = L.latLngBounds(markerList[0].pos, markerList[0].pos);
+    //markerListの設定でマーカーを追加
+    for (var num in json) {
+        var mk = markerList[num];
+        var popup = L.popup().setContent(mk.name);
+        L.marker(mk.pos, { title: mk.name }).bindPopup(popup).addTo(map);
+        //マーカー全体が入るボックスを広げる
+        bound.extend(mk.pos);
+    }
+    //マーカー全体が入るように地図範囲を設定する
+    map.fitBounds(bound);
+}
+
+
+
+
 function extractlocation(map_type) {
     var map = L.map('mapcontainer', { zoomControl: false });
     var map_type = map_type;
-    console.log(map_type);
+
     map.setView([35,135], 15);
     L.tileLayer('https://c.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: "<a href='https://www.openstreetmap.org/copyright' target='_blank'>OpenStreetMap</a> contributors, "
