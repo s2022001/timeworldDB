@@ -41,7 +41,7 @@ CREATE TABLE wishlists (
 
 CREATE TABLE info (
     id SERIAL PRIMARY KEY,
-    register_at DEFAULT NOW(),
+    register_at TIMESTAMP default NOW(),
     user_id INTEGER,
     info_type TEXT,
     content TEXT
