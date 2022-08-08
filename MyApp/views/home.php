@@ -70,7 +70,7 @@ $_SESSION["map_type"] = "ALL_DIARY";
             </div>
 
             <div>
-                <a href="home_map.php"><button type="button"></a>
+                <a href="home_map.php"><button type="button">Map</button></a>
             </div>
 
             <!-- スクロール -->
