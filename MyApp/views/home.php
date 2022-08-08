@@ -69,6 +69,10 @@ $_SESSION["map_type"] = "ALL_DIARY";
                 <div class="v8_367"></div>
             </div>
 
+            <div>
+                <a href="home_map.php"><button type="button"></a>
+            </div>
+
             <!-- スクロール -->
             <div class="memorys" style="top: 70px; position: absolute;">
 

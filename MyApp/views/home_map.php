@@ -31,6 +31,10 @@ $_SESSION["map_type"] = "ALL_DIARY";
             <div class="map col-md-6">
                 <iframe src="map.php" class="map_frame"　style="top: 0px; position: absolute;"></iframe>
             </div>
+
+            <div>
+                <a href="home_map.php"><button type="button"></a>
+            </div>
             <!-- スクロール -->
             <div class="memorys" style="top: 0px; position: absolute;">
 
